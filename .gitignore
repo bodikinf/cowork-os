@@ -1,0 +1,17 @@
+# OS junk
+.DS_Store
+Thumbs.db
+*.tmp
+.~lock.*#
+
+# Your real content — keep it OUT of the public repo.
+# Uncomment / adapt these in your own working copy so private memory never ships.
+# accounting/
+# business-development/
+# **/clients/
+# **/*.private.md
+
+# Secrets
+.env
+*.key
+secrets/
