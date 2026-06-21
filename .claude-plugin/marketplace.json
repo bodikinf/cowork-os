@@ -4,13 +4,10 @@
     "name": "Yempik",
     "url": "https://yempik.com"
   },
-  "metadata": {
-    "description": "An operating system for Claude Cowork: living memory, outcome-driven workflows, and a LinkedIn growth system. Built by Yempik.",
-    "version": "0.1.0"
-  },
   "plugins": [
     {
       "name": "cowork-os",
+      "displayName": "cowork-os",
       "source": "./plugins/cowork-os",
       "description": "Turn a Claude Cowork project into a workspace with memory: guided setup, a Memory Update protocol, a LinkedIn editor, mission mode, a weekly marketing pulse, and an inbox processor.",
       "version": "0.1.0",
@@ -19,15 +16,7 @@
         "url": "https://yempik.com"
       },
       "homepage": "https://github.com/yempik-ai/cowork-os",
-      "license": "MIT",
-      "keywords": [
-        "claude-cowork",
-        "memory",
-        "knowledge-management",
-        "marketing",
-        "linkedin",
-        "productivity"
-      ]
+      "category": "productivity"
     }
   ]
 }
