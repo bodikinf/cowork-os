@@ -11,7 +11,7 @@
       "displayName": "cowork-os",
       "source": "./plugins/cowork-os",
       "description": "Turn a Claude Cowork project into a workspace with memory: guided setup, a Memory Update protocol, a LinkedIn editor, mission mode, a weekly marketing pulse, and an inbox processor.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Yempik",
         "url": "https://yempik.com"
