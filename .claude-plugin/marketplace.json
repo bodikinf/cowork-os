@@ -4,6 +4,7 @@
     "name": "Yempik",
     "url": "https://yempik.com"
   },
+  "description": "An operating system for Claude Cowork: living memory, outcome-driven workflows, and a LinkedIn growth system. Built by Yempik.",
   "plugins": [
     {
       "name": "cowork-os",

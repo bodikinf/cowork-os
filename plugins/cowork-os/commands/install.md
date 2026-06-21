@@ -1,5 +1,5 @@
 ---
-description: Guided setup for a new Cowork workspace. Interviews you (about 5 minutes) and generates a full, pre-configured cowork-os workspace: folders, copy, project instructions, and recurring routines.
+description: Guided setup for a new Cowork workspace. Interviews you (about 5 minutes) and generates a full, pre-configured cowork-os workspace (folders, copy, project instructions, and recurring routines).
 ---
 
 # /cowork-os:install, guided setup
