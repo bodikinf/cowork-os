@@ -13,7 +13,7 @@
 
 | Capability | What it is (plain language) | Creates |
 |---|---|---|
-| **Living memory** | The project remembers decisions, open questions and context in files, so it gets smarter every week instead of forgetting. | `context/`, `decisions/`, the **Memory Update** habit in `PROJECT_INSTRUCTIONS.md` |
+| **Living memory** | The project keeps decisions, open questions and context in files you can read and correct, so the workspace compounds week over week instead of starting from zero. | `context/`, `decisions/`, the **Memory Update** habit in `PROJECT_INSTRUCTIONS.md` |
 | **Project Instructions** | The system prompt that makes Claude check sources, separate facts from assumptions, and update memory. | filled `PROJECT_INSTRUCTIONS.md` |
 | **Structure guide** | Explains where everything lives so the workspace stays tidy. | `PROJECT_STRUCTURE.md` |
 
