@@ -17,7 +17,7 @@
 Folder conventions · a living-memory protocol · outcome-driven workflows ·
 and three flagship modules (LinkedIn Growth OS, Missions, Scheduled tasks).
 
-Built and battle-tested by [**Yempik**](https://yempik.com) · maintained by Raffaele.
+Built and battle-tested by [**Yempik**](https://yempik.com) · maintained by Raffaele Zarrelli & Simone Bova.
 
 <br />
 
