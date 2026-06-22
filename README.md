@@ -31,13 +31,28 @@ _Paste the installer, answer 6 questions, and Claude builds your workspace._
 
 ## EN: What this is
 
-Most people use AI chat as a disposable conversation: ask, get an answer, lose the context. **cowork-os** treats your Claude Cowork project as a **company workspace with a memory**. Every task reads from and writes back to a structured set of Markdown files, so the system gets *smarter every week* instead of forgetting everything.
+Most AI is a brilliant intern you have to stand over: it finishes a task, stops, and waits for you to point at the next one. cowork-os gives Claude Cowork a brain, so it stops waiting and runs your work.
 
-It's not an app and it has no dependencies. It's a **folder structure + a set of prompts and conventions** you copy into a Cowork project (or any agentic-coding workspace) and adapt to your business in ~30 minutes.
+The unglamorous truth about that brain: it is just Markdown files you can open and edit. Decisions (each with a status), context, open questions, what changed this week. The agent reads them when a task starts and writes back when it ends. No database, no vector store, no black box.
+
+Because that brain is on disk and you can read and correct it, the agent runs real work (your campaigns, your site, your briefs, your outreach drafts) while staying grounded and under your control. The state is inspectable, the outside actions are draft-only, and nothing runs behind your back. That is the deliberate difference from a self-hosted autonomous agent.
+
+It is not a separate app and it has no dependencies. You load it into a Claude Cowork project (or any agentic workspace) and you have a working environment in a few minutes, no training required.
 
 <div align="center">
 <img src="docs/chat-vs-memoria.png" alt="Disposable chat vs. a workspace with memory" width="460" />
 </div>
+
+### How it works (the stack)
+
+There is no separate runtime or backend. The agent is Claude Cowork itself. cowork-os is what you load into the project to direct it:
+
+- **State** — the Markdown files the agent reads when a task starts and writes back when it ends.
+- **Behavior** — the Project Instructions that make it check sources, separate facts from assumptions, and run a Memory Update.
+- **Recurrence** — scheduled tasks: prompts Cowork runs on a cadence (like cron), so routines run on their own.
+- **Optional plugin** — slash commands plus an always-on skill, for one-command setup and use.
+
+The "multiple agents" are separate runs and sub-agents that coordinate through the shared files, not a fleet of services. The core is just files plus instructions, so it is not locked to one provider: Cowork is the featured host (scheduled tasks, native plugin), but the method points at any agent that reads files.
 
 ### What's inside
 
@@ -52,10 +67,11 @@ It's not an app and it has no dependencies. It's a **folder structure + a set of
 
 ### Why it works
 
-- **Living memory, not chat history.** Decisions, assumptions and open questions live in files, not in a thread that scrolls away.
-- **Evidence over vibes.** The instructions force the agent to check real data and label facts vs. assumptions vs. recommendations.
+- **State you can read and correct.** Decisions (with a status), assumptions and open questions live in files you open and fix, not in a thread that scrolls away or a memory you can only query and hope.
+- **It runs the work, not just remembers it.** With the state on disk, the agent holds the thread across long, multi-step workflows, stays grounded (it re-derives and invents less), and proposes the next step instead of waiting for you.
+- **Evidence over vibes.** The Project Instructions force it to check real sources and label facts vs assumptions vs recommendations.
 - **Outcome over output.** The mission workflow refuses to stop at "I sent the email."
-- **Adopt in 30 minutes.** Copy the folder, paste the Project Instructions, fill the placeholders. See [`GETTING_STARTED.md`](./GETTING_STARTED.md).
+- **Adopt in 30 minutes.** Copy the folder, paste the Project Instructions, fill the placeholders.
 
 ### Quick start, three ways
 
@@ -72,15 +88,30 @@ Then run `/cowork-os:install`: Claude interviews you (about 5 minutes) and **gen
 
 **Path C, manual.** Prefer to do it by hand, or not on Cowork? Fill [`PROJECT_INSTRUCTIONS.md`](./PROJECT_INSTRUCTIONS.md) and the `context/` templates yourself, see [`GETTING_STARTED.md`](./GETTING_STARTED.md). Every file ships as a skeleton **plus a sanitized Yempik example**.
 
-Then just work, and end important tasks with a **Memory Update** so the system gets smarter every week.
+Then just work, and end important tasks with a **Memory Update**, so the workspace compounds week over week.
 
 ---
 
 ## IT: Cos'è
 
-La maggior parte delle persone usa la chat AI come una conversazione usa-e-getta: chiedi, ottieni una risposta, perdi il contesto. **cowork-os** tratta il tuo progetto Claude Cowork come un **workspace aziendale con una memoria**. Ogni task legge e riscrive un set strutturato di file Markdown: così il sistema diventa *più intelligente ogni settimana* invece di dimenticare tutto.
+La maggior parte dell'AI è uno stagista brillante che devi avere sempre sopra le spalle: finisce un task, si ferma, e aspetta che tu gli indichi il prossimo. cowork-os dà a Claude Cowork un cervello, così smette di aspettare e fa girare il tuo lavoro.
 
-Non è un'app e non ha dipendenze. È una **struttura di cartelle + un set di prompt e convenzioni** che copi dentro un progetto Cowork (o qualsiasi workspace agentico) e adatti alla tua azienda in ~30 minuti.
+La verità poco glamour su quel cervello: sono solo file Markdown che apri e modifichi. Decisioni (ognuna con uno stato), contesto, domande aperte, cosa è cambiato questa settimana. L'agente li legge quando un task inizia e li riscrive quando finisce. Niente database, niente vector store, niente scatola nera.
+
+Siccome quel cervello è su disco e puoi leggerlo e correggerlo, l'agente fa girare lavoro vero (le tue campagne, il tuo sito, i tuoi brief, le bozze di outreach) restando ancorato e sotto il tuo controllo. Lo stato è ispezionabile, le azioni verso l'esterno sono solo bozze, e niente gira alle tue spalle. È la differenza voluta da un agente autonomo self-hosted.
+
+Non è un'app separata e non ha dipendenze. Lo carichi in un progetto Claude Cowork (o in qualsiasi workspace agentico) e hai un ambiente funzionante in pochi minuti, senza bisogno di formazione.
+
+### Come funziona (lo stack)
+
+Non c'è un runtime o un backend separato. L'agente è Claude Cowork stesso. cowork-os è ciò che carichi nel progetto per guidarlo:
+
+- **Stato** — i file Markdown che l'agente legge quando un task inizia e riscrive quando finisce.
+- **Comportamento** — le Project Instructions che lo fanno controllare le fonti, separare fatti e ipotesi, e fare una Memory Update.
+- **Ricorrenza** — gli scheduled task: prompt che Cowork lancia a cadenza (tipo cron), così le routine girano da sole.
+- **Plugin (opzionale)** — slash command più una skill sempre attiva, per setup e uso con un comando.
+
+I "più agenti" sono run e sotto-agenti che si coordinano attraverso i file condivisi, non una flotta di servizi. Il core è solo file più istruzioni, quindi non è legato a un solo provider: Cowork è l'host featured (scheduled task, plugin nativo), ma il metodo lo punti su qualsiasi agente che legge file.
 
 ### Cosa c'è dentro
 
@@ -95,10 +126,11 @@ Non è un'app e non ha dipendenze. È una **struttura di cartelle + un set di pr
 
 ### Perché funziona
 
-- **Memoria viva, non cronologia chat.** Decisioni, ipotesi e domande aperte vivono nei file, non in un thread che scorre via.
-- **Evidenze, non sensazioni.** Le istruzioni obbligano l'agente a controllare dati reali e a etichettare fatti / ipotesi / raccomandazioni.
+- **Stato che leggi e correggi.** Decisioni (con uno stato), ipotesi e domande aperte vivono in file che apri e correggi, non in un thread che scorre via o in una memoria che puoi solo interrogare e sperare.
+- **Fa girare il lavoro, non lo ricorda soltanto.** Con lo stato su disco, l'agente tiene il filo sui workflow lunghi e a più passi, resta ancorato (ri-deduce e inventa di meno) e propone il passo dopo invece di aspettarti.
+- **Evidenze, non sensazioni.** Le Project Instructions lo obbligano a controllare fonti reali ed etichettare fatti, ipotesi e raccomandazioni.
 - **Outcome, non output.** Il workflow delle missioni si rifiuta di fermarsi a "ho mandato la mail".
-- **Adozione in 30 minuti.** Copia la cartella, incolla le Project Instructions, compila i placeholder. Vedi [`GETTING_STARTED.md`](./GETTING_STARTED.md).
+- **Adozione in 30 minuti.** Copia la cartella, incolla le Project Instructions, compila i placeholder.
 
 ### Avvio rapido, tre modi
 
@@ -115,7 +147,7 @@ Poi lancia `/cowork-os:install`: Claude ti intervista (circa 5 minuti) e **gener
 
 **Via C, manuale.** Preferisci farlo a mano, o non sei su Cowork? Compila tu [`PROJECT_INSTRUCTIONS.md`](./PROJECT_INSTRUCTIONS.md) e i template in `context/`, vedi [`GETTING_STARTED.md`](./GETTING_STARTED.md). Ogni file è uno scheletro **più un esempio Yempik sanitizzato**.
 
-Poi lavora e basta, e chiudi i task importanti con una **Memory Update**, così il sistema diventa più intelligente ogni settimana.
+Poi lavora e basta, e chiudi i task importanti con una **Memory Update**, così il workspace si arricchisce settimana dopo settimana.
 
 ---
 
