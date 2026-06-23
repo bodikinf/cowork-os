@@ -1,5 +1,5 @@
-> **EN —** The system prompt for your Cowork project. Paste it into your project's custom instructions and fill the `{{placeholders}}`. This is the "brain" that makes the whole OS work — especially the **Memory Update** protocol at the end.
-> **IT —** Il system prompt del tuo progetto Cowork. Incollalo nelle istruzioni del progetto e compila i `{{placeholders}}`. È il "cervello" che fa funzionare tutto l'OS — soprattutto il protocollo **Memory Update** in fondo.
+> **EN —** The system prompt for your Cowork project. Paste it into your project's custom instructions and fill the `{{placeholders}}`. This is the operating rule set that makes the whole OS work — especially the **Memory Update** protocol at the end.
+> **IT —** Il system prompt del tuo progetto Cowork. Incollalo nelle istruzioni del progetto e compila i `{{placeholders}}`. È il set di regole operative che fa funzionare tutto l'OS — soprattutto il protocollo **Memory Update** in fondo.
 
 ---
 

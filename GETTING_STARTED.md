@@ -17,7 +17,7 @@ Copy the `cowork-os/` folder into your Claude Cowork project folder (or clone th
 ### 2. Configure once
 Open [`cowork.config.example.md`](./cowork.config.example.md). It lists every `{{PLACEHOLDER}}` used across the templates (company name, one-liner, founder, website, ICP, services, category, KPIs…). Fill it in. Keep it as your single source of truth.
 
-### 3. Install the brain
+### 3. Install the operating rules
 Open [`PROJECT_INSTRUCTIONS.md`](./PROJECT_INSTRUCTIONS.md), replace the placeholders with your values, and paste it into your Cowork project's **custom instructions**. This is what makes the agent check sources, separate facts from assumptions, and run a **Memory Update** at the end of every task.
 
 ### 4. Fill your context

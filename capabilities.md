@@ -1,7 +1,7 @@
 # Capabilities catalog · Catalogo delle capacità
 
-> **EN —** The "brain" the installer reasons over. For every module, automation and skill: what it is in plain language, **when to set it up** (triggers from the interview), and what it creates. Claude reads this to *proactively* propose the right setup — because the average user doesn't know these features exist.
-> **IT —** Il "cervello" su cui ragiona l'installer. Per ogni modulo, automazione e skill: cos'è in parole semplici, **quando attivarlo** (trigger dall'intervista) e cosa crea. Claude legge questo per proporre *in modo proattivo* il setup giusto — perché l'utente medio non sa che queste funzioni esistono.
+> **EN —** The catalog the installer reasons over. For every module, automation and skill: what it is in plain language, **when to set it up** (triggers from the interview), and what it creates. Claude reads this to *proactively* propose the right setup — because the average user doesn't know these features exist.
+> **IT —** Il catalogo su cui ragiona l'installer. Per ogni modulo, automazione e skill: cos'è in parole semplici, **quando attivarlo** (trigger dall'intervista) e cosa crea. Claude legge questo per proporre *in modo proattivo* il setup giusto — perché l'utente medio non sa che queste funzioni esistono.
 
 **How Claude should use this file:** during the interview, match the user's answers to the `Trigger` of each item below. Propose every match in plain language with a one-line *why it fits them*, grouped, and let them deselect. Default to "yes" for anything clearly relevant. Never wait for the user to ask for a capability they don't know exists.
 
@@ -13,7 +13,7 @@
 
 | Capability | What it is (plain language) | Creates |
 |---|---|---|
-| **Living memory** | The project keeps decisions, open questions and context in files you can read and correct, so the workspace compounds week over week instead of starting from zero. | `context/`, `decisions/`, the **Memory Update** habit in `PROJECT_INSTRUCTIONS.md` |
+| **Operating context** | The project keeps decisions, open questions, next actions and routines in files you can read and correct, so the workspace compounds week over week. | `context/`, `decisions/`, the **Memory Update** habit in `PROJECT_INSTRUCTIONS.md` |
 | **Project Instructions** | The system prompt that makes Claude check sources, separate facts from assumptions, and update memory. | filled `PROJECT_INSTRUCTIONS.md` |
 | **Structure guide** | Explains where everything lives so the workspace stays tidy. | `PROJECT_STRUCTURE.md` |
 

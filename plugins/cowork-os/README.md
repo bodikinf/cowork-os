@@ -1,6 +1,6 @@
 # cowork-os (plugin)
 
-The installable plugin version of [**cowork-os**](https://github.com/yempik-ai/cowork-os), an operating system for Claude Cowork. Install it once and Claude gets the cowork-os operating rules plus a set of slash commands, with no setup.
+The installable plugin version of [**cowork-os**](https://github.com/yempik-ai/cowork-os), an operating workspace for Claude Cowork. Install it once and Claude gets the cowork-os operating rules plus a set of slash commands, with no setup.
 
 Built by [Yempik](https://yempik.com) for Claude Cowork. MIT.
 
