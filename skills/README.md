@@ -5,10 +5,11 @@
 
 ## Skills that pair with cowork-os · Skill che si abbinano
 
-These are named so Claude can invoke them precisely. **They are not bundled in this repo** — they're separate Cowork skills. Claude uses whichever are installed; if a useful one is missing, it names it and points you to **Settings → Capabilities**.
+These are named so Claude can invoke them precisely. **Most are not bundled in this repo** (the first-party `knowledge-transfer` skill ships with the kit); the rest are separate Cowork skills. Claude uses whichever are installed; if a useful one is missing, it names it and points you to **Settings → Capabilities**.
 
 | Skill | What it does | Claude reaches for it when |
 |---|---|---|
+| `knowledge-transfer` *(bundled)* | Interviews a person and builds the company brain (processes, rules with source, glossary) into the workspace. Runs on its own or via `/cowork-os:knowledge-transfer`. | onboarding, a key person leaving, standardizing a process |
 | `linkedin-editor` | Turns any asset into ready-to-publish LinkedIn posts (8-step workflow). Also shipped here as a no-install workflow in `../linkedin/editor_workflow.md`. | "esegui l'editor su [asset]" |
 | `document-data-extractor` | Pulls receipts / invoices / docs into a clean Excel table. | you want document data tabulated |
 | `validation-outreach` | Cold messages that book *discovery* interviews (learning, not selling). | you want to talk to potential customers |

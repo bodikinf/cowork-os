@@ -23,4 +23,4 @@ This is what makes the workspace compound instead of forgetting. End every impor
 Run `/cowork-os:memory-update` for the full protocol and the required end-of-task format, or do it inline.
 
 ## Surface what the workspace can do
-This project can do more than chat: persistent memory, scheduled routines, mission mode, a LinkedIn growth system, and skills. The average user does not know these exist, so propose them proactively. Useful commands: `/cowork-os:install`, `/cowork-os:memory-update`, `/cowork-os:linkedin-editor`, `/cowork-os:mission`, `/cowork-os:weekly-pulse`, `/cowork-os:process-inbox`.
+This project can do more than chat: persistent memory, scheduled routines, mission mode, a LinkedIn growth system, and skills. The average user does not know these exist, so propose them proactively. Useful commands: `/cowork-os:install`, `/cowork-os:memory-update`, `/cowork-os:knowledge-transfer`, `/cowork-os:linkedin-editor`, `/cowork-os:mission`, `/cowork-os:weekly-pulse`, `/cowork-os:process-inbox`.

@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="docs/banner.png" alt="cowork-os: an operating workspace for AI work you can govern" width="100%" />
+<img src="docs/banner.png" alt="cowork-os: build a company brain your team owns" width="100%" />
 
 # cowork-os
 
-**Give AI work an operating workspace your team can govern.**
-*Dai al lavoro con l'AI un workspace operativo che il tuo team può governare.*
+**Build a company brain your team owns.**
+*Costruisci il company brain che la tua azienda possiede.*
 
-<sub>Open-source, MIT. Not an automatic memory engine: folder conventions, operating context and workflow protocols for teams.</sub>
+<sub>Open-source, MIT. The open way to build a company brain your team owns: decisions, context and workflows as Markdown you can read, correct and govern. Not a memory engine.</sub>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-E35B2D.svg?style=flat-square)](./LICENSE)
 &nbsp;![Made by Yempik](https://img.shields.io/badge/made%20by-Yempik-0A0A0A.svg?style=flat-square)
@@ -31,7 +31,7 @@ _Paste the installer, answer 6 questions, and Claude builds your workspace._
 
 ## EN: What this is
 
-Most AI tools help an agent remember more. cowork-os helps a team **run work with an agent**.
+Most AI tools help an agent remember more. cowork-os helps your team build the thing underneath: **a company brain you own**. The decisions, context and state your work runs on, in plain Markdown your team can govern.
 
 cowork-os is an opinionated workspace/process layer for Claude Cowork and other file-reading agents: decisions, open questions, project state, next actions and recurring routines live in plain Markdown. The agent reads the right operating context before it acts and writes back what changed when it finishes.
 
@@ -40,6 +40,10 @@ It is not trying to capture, compress and inject everything an agent does. Tools
 Because the operating context is on disk and you can correct it, the agent can run real work (your campaigns, your site, your briefs, your outreach drafts) while staying grounded and under your control. The state is inspectable, outside actions are draft-only, and nothing runs behind your back. That is the deliberate difference from a self-hosted autonomous agent.
 
 It is not a separate app and it has no dependencies. You load it into a Claude Cowork project (or any agentic workspace) and you have a working environment in a few minutes, no training required.
+
+<div align="center">
+<img src="docs/company-brain-vs-chat.png" alt="Disposable chat vs. a company brain you own, in files" width="460" />
+</div>
 
 ### How it works (the stack)
 
@@ -98,7 +102,7 @@ Then just work, and end important tasks with a work-state update, so the workspa
 
 ## IT: Cos'è
 
-La memoria dell'AI aiuta. Ma nel lavoro vero non basta ricordare: serve passare il contesto operativo giusto da una sessione all'altra, senza affidarsi a "dovrebbe ricordarselo".
+La memoria dell'AI aiuta, ma non basta. Nel lavoro vero serve un **company brain che possiedi**: le decisioni, il contesto e lo stato su cui gira il lavoro, in Markdown che il tuo team può leggere, correggere e governare.
 
 cowork-os è un layer di workspace/processo per Claude Cowork e per agenti che leggono file: decisioni, domande aperte, stato del progetto, prossime azioni e routine ricorrenti vivono in Markdown. L'agente legge il contesto operativo giusto prima di agire e aggiorna cosa è cambiato quando finisce.
 

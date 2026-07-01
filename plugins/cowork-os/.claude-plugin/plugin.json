@@ -1,7 +1,7 @@
 {
   "name": "cowork-os",
-  "version": "0.1.1",
-  "description": "Turn a Claude Cowork project into a workspace with memory: guided setup, a Memory Update protocol, a LinkedIn editor, mission mode, and recurring routines. Built by Yempik for Claude Cowork.",
+  "version": "0.2.0",
+  "description": "Turn a Claude Cowork project into a company brain your team owns: guided setup, a Memory Update protocol, a knowledge-transfer interview, a LinkedIn editor, mission mode, and recurring routines. Built by Yempik for Claude Cowork.",
   "author": {
     "name": "Yempik",
     "url": "https://yempik.com"
@@ -10,9 +10,11 @@
   "license": "MIT",
   "keywords": [
     "claude-cowork",
-    "memory",
+    "company-brain",
     "second-brain",
+    "knowledge-transfer",
     "knowledge-management",
+    "onboarding",
     "marketing",
     "linkedin",
     "productivity"

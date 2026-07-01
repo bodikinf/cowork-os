@@ -52,6 +52,12 @@
 - **Trigger:** the user has one or more of their own products (not just client work).
 - **Creates:** a `products/<name>/` from the template.
 
+### 🚩 Knowledge Transfer, build the company brain from a person
+- **What:** a guided, objective-first interview that captures what a person knows (exceptions, decision criteria, unwritten rules) and writes it into the workspace as processes, rules with a source, a glossary and open questions. This is how the company brain gets built from people, not only from files.
+- **Trigger:** onboarding a new hire, a key person leaving or retiring, knowledge stuck in one head ("only Marco knows how"), or standardizing how a task is done.
+- **Runs by itself** when the user describes that pain, or on demand via `/cowork-os:knowledge-transfer`.
+- **Creates:** `context/processes/<process>.md`, updates to `decisions/decisions_log.md` (rules with source), `context/glossary.md`, `decisions/open_questions.md`.
+
 ---
 
 ## 3. Scheduled automations (recurring — explain, then offer to set up)
@@ -104,4 +110,5 @@
 - *"I do outreach"* → linkedin-connection-batch and/or the validation-outreach skill.
 - *"I want a morning brief / a chief-of-staff"* → founder-daily-brief.
 - *"I have a pile of unsorted material"* → the `_inbox/` intake flow ("process the inbox").
+- *"Someone key is leaving" / "onboarding is slow" / "only one person knows how to do X"* → the **knowledge-transfer** interview (`/cowork-os:knowledge-transfer`).
 - *Always* → Core + workspace-maintenance + the Memory Update habit.
