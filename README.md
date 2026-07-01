@@ -14,8 +14,8 @@
 &nbsp;![For Claude Cowork](https://img.shields.io/badge/for-Claude%20Cowork-E35B2D.svg?style=flat-square)
 &nbsp;![PRs welcome](https://img.shields.io/badge/PRs-welcome-0A0A0A.svg?style=flat-square)
 
-Folder conventions · operating context · outcome-driven workflows ·
-and three flagship modules (LinkedIn Growth OS, Missions, Scheduled tasks).
+Folder conventions · operating context · a Knowledge Transfer interview that captures how you work · outcome-driven workflows ·
+and flagship modules (LinkedIn Growth OS, Missions, Scheduled tasks).
 
 Built and battle-tested by [**Yempik**](https://yempik.com) · maintained by Raffaele Zarrelli & Simone Bova.
 
@@ -23,7 +23,7 @@ Built and battle-tested by [**Yempik**](https://yempik.com) · maintained by Raf
 
 <img src="docs/demo.gif" alt="cowork-os installer in action: paste a file, answer 6 questions, get a configured workspace" width="540" />
 
-_Paste the installer, answer 6 questions, and Claude builds your workspace._
+_Paste the installer, answer a few questions, and Claude builds your company brain._
 
 </div>
 
@@ -63,6 +63,7 @@ The "multiple agents" are separate runs and sub-agents that coordinate through t
 | **Core OS** | A clean folder structure (`context/`, `marketing/`, `website/`, `decisions/`, `reviews/`) and the work-state update protocol that keeps it alive. |
 | **Project Instructions** | The system prompt that turns a generic assistant into a strategist that always checks sources, separates facts from assumptions, and updates work state. |
 | **Relentless Outcome Workflow** | A method for *ambitious missions*: pursue an outcome, not a task. Route maps, evidence logs, stop conditions. |
+| 🚩 **Knowledge Transfer** | An objective-first interview that captures the tacit know-how in a person's head (the exceptions, the decision criteria, the unwritten rules) and writes it into the workspace as processes, rules with a source and a glossary. It builds the company brain from your people, not just your files. |
 | 🚩 **LinkedIn Growth OS** | A full system to turn know-how into authority and leads: strategy, a content engine (6 formats + hook/CTA banks), a reputation engine, an engagement playbook, and a runnable 8-step editor. |
 | 🚩 **Missions** | The outcome framework, packaged as a copy-paste mission template. |
 | 🚩 **Scheduled tasks** | 10 ready-to-use recurring automations (weekly marketing pulse, campaign review, workspace maintenance, trend hunter, engagement radar, mission review, daily founder brief…) as prompt templates + a setup guide. |
@@ -71,6 +72,7 @@ The "multiple agents" are separate runs and sub-agents that coordinate through t
 
 - **Operating context you can read and correct.** Decisions (with a status), assumptions, open questions and next actions live in files you open and fix, not only in a thread that scrolls away or a memory layer you cannot inspect.
 - **It runs the work, not just recalls history.** With the state on disk, the agent holds the thread across long, multi-step workflows, stays grounded (it re-derives and invents less), and proposes the next step instead of waiting for you.
+- **It captures what lives in people's heads.** The Knowledge Transfer interview turns tacit know-how (how a process is really run, the exceptions, the unwritten rules) into files the team and agents can use, so the brain survives a person leaving.
 - **Evidence over vibes.** The Project Instructions force it to check real sources and label facts vs assumptions vs recommendations.
 - **Outcome over output.** The mission workflow refuses to stop at "I sent the email."
 - **Adopt in 30 minutes.** Copy the folder, paste the Project Instructions, fill the placeholders.
@@ -130,6 +132,7 @@ I "più agenti" sono run e sotto-agenti che si coordinano attraverso i file cond
 | **Core OS** | Una struttura di cartelle pulita (`context/`, `marketing/`, `website/`, `decisions/`, `reviews/`) e il protocollo di aggiornamento dello stato che la tiene viva. |
 | **Project Instructions** | Il system prompt che trasforma un assistente generico in uno strategist che controlla sempre le fonti, separa fatti e ipotesi, e aggiorna lo stato di lavoro. |
 | **Relentless Outcome Workflow** | Un metodo per le *missioni ambiziose*: persegui un outcome, non un task. Route map, evidence log, stop condition. |
+| 🚩 **Knowledge Transfer** | Un'intervista objective-first che cattura il know-how tacito nella testa di una persona (eccezioni, criteri di decisione, regole non scritte) e lo scrive nel workspace come processi, regole con fonte e glossario. Costruisce il company brain dalle persone, non solo dai file. |
 | 🚩 **LinkedIn Growth OS** | Un sistema completo per trasformare know-how in autorevolezza e lead: strategia, content engine (6 format + hook/CTA bank), reputation engine, engagement playbook, editor a 8 step. |
 | 🚩 **Missions** | Il framework outcome, pacchettizzato come template di missione copia-incolla. |
 | 🚩 **Scheduled tasks** | 10 automazioni ricorrenti pronte all'uso (pulse marketing, review campagne, manutenzione workspace, trend hunter, engagement radar, review missioni, brief founder giornaliero…) come template di prompt + guida. |
@@ -138,6 +141,7 @@ I "più agenti" sono run e sotto-agenti che si coordinano attraverso i file cond
 
 - **Contesto operativo che leggi e correggi.** Decisioni (con uno stato), ipotesi, domande aperte e prossime azioni vivono in file che apri e correggi, non solo in un thread che scorre via o in una memoria che non puoi ispezionare.
 - **Fa girare il lavoro, non recupera solo lo storico.** Con lo stato su disco, l'agente tiene il filo sui workflow lunghi e a più passi, resta ancorato (ri-deduce e inventa di meno) e propone il passo dopo invece di aspettarti.
+- **Cattura ciò che vive nella testa delle persone.** L'intervista Knowledge Transfer trasforma il know-how tacito (come si esegue davvero un processo, le eccezioni, le regole non scritte) in file che team e agenti possono usare, così il cervello sopravvive a chi se ne va.
 - **Evidenze, non sensazioni.** Le Project Instructions lo obbligano a controllare fonti reali ed etichettare fatti, ipotesi e raccomandazioni.
 - **Outcome, non output.** Il workflow delle missioni si rifiuta di fermarsi a "ho mandato la mail".
 - **Adozione in 30 minuti.** Copia la cartella, incolla le Project Instructions, compila i placeholder.
@@ -179,7 +183,7 @@ cowork-os/
 ├── GETTING_STARTED.md           # setup, both paths (EN + IT)
 ├── CONTRIBUTING.md
 ├── workflows/                   # Relentless Outcome Workflow
-├── context/                     # overview · positioning · services · tone of voice
+├── context/                     # overview · positioning · services · tone of voice · processes
 ├── marketing/                   # strategy · campaigns · content
 ├── website/                     # notes · backlog · homepage copy
 ├── decisions/                   # decisions log · open questions
