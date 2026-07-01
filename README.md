@@ -41,10 +41,6 @@ Because the operating context is on disk and you can correct it, the agent can r
 
 It is not a separate app and it has no dependencies. You load it into a Claude Cowork project (or any agentic workspace) and you have a working environment in a few minutes, no training required.
 
-<div align="center">
-<img src="docs/chat-vs-memoria.png" alt="Disposable chat vs. an operating workspace with explicit context" width="460" />
-</div>
-
 ### How it works (the stack)
 
 There is no separate runtime or backend. The agent is Claude Cowork itself. cowork-os is what you load into the project to direct it:
