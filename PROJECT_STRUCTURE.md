@@ -25,6 +25,7 @@ Informazioni fondamentali e relativamente stabili.
 - `positioning.md` — posizionamento, proposta di valore, messaggi chiave, differenziazione, categorie di mercato, problemi risolti.
 - `services.md` — servizi offerti, descrizione, priorità, pacchetti, use case.
 - `tone_of_voice.md` — tono di voce, parole da usare/evitare, esempi di copy buono e da evitare.
+- `processes/` — come si eseguono **davvero** i processi operativi (uno per file), catturati con la skill `knowledge-transfer`: passi reali, punti di decisione, eccezioni, regole non scritte. È il **layer operativo** del company brain (il "come si lavora", non solo il "chi siamo"). Le regole estratte vanno anche in `decisions/decisions_log.md` con la fonte-intervista. `_TEMPLATE.md` è lo stampo.
 
 ## `marketing/`
 

@@ -1,57 +1,67 @@
 ---
 name: knowledge-transfer
-description: Interview a person and turn their operating know-how (tacit knowledge) into the company brain: processes, rules with source, a glossary, decisions and open questions, written into the workspace files. Use whenever someone needs to capture what a person knows before they leave or retire, onboard a new hire faster, standardize how a task is done, or rescue knowledge that lives in one head ("only Marco knows how to do it"). Triggers: onboarding, a key person leaving or retiring, tribal knowledge, "document how we do X", "capture what the expert knows", knowledge transfer, standardize a process, write SOPs by talking to the person who does the job.
+description: Interview a person and turn their operating know-how (tacit knowledge) into the company brain: processes, rules with source, a glossary, decisions and open questions, written into the workspace. Use whenever someone needs to capture how a process actually gets done, before a key person leaves or retires, to onboard a new hire faster, to standardize a workflow, or to rescue knowledge that lives in one head ("only Marco knows how to do it"). Triggers: onboarding, a key person leaving or retiring, bus factor, tribal knowledge, "document how we do X", "capture what the expert knows", map a workflow, standardize a process, write SOPs by talking to the person who does the job.
 ---
 
 # Knowledge Transfer, the interview that builds the company brain
 
-You conduct a structured interview with one person, extract their tacit know-how (the exceptions, the decision criteria, the unwritten rules), and write it into the cowork-os workspace so the team and other agents can read, apply and correct it. Interview in the user's language.
+You interview one person and turn their tacit know-how into the workspace, so the team and other agents can read, apply and correct it.
 
-## What this is (and is not)
-- **Is:** one question at a time, dig into what is not written down, then write it into the workspace as processes, rules with a source, a glossary and open questions.
-- **Is not:** a transcribed chat, a fixed questionnaire, or invented content. Every rule carries a source (interview, date, who said it) and a confidence level. If you do not know, say so.
+**The hard truth this skill exists for:** people cannot narrate a process they have automated. The better someone is at a job, the less they can explain it, because they run it on autopilot. Ask "how do you do X" and you get the **official, abstract** version (the manual), not the **real** one (the one full of "well, it depends"). Your job is not to collect answers. It is to make the tacit **observable**. Interview in the user's language.
 
-## Principle: objective-first, one question at a time
-Do not start from tasks. Start from the goal: what must a new hire (or an agent) be able to **do** on their own at the end? That fixes the scope. Then guide the person through their real processes, generating follow-ups from their answers, not from a fixed list. Close every block by mirroring back and letting them correct.
+## Non-negotiables
+- **One question at a time.** Never a volley. Short questions.
+- **Never invent.** Every rule carries a source (interview, date, who) and a confidence. If something is unknown, say so and park it in `decisions/open_questions.md`.
+- **After the first 3-4 framing questions, stop using a list.** Generate every next question **from the person's last answer**, aimed at its vaguest or most loaded part. A generic follow-up you could have asked anyone is a failure.
+- **Budget: about 15 minutes, 1 or 2 processes per session.** Depth over coverage. The brain grows over more sessions, do not try to capture everything at once.
 
-## The conductor: 4 phases
-**Phase 0, setup (30s).** Who are you, what role, which process/area today, how long we have.
+## Step 1, frame (standard, 3-4 questions only)
+- Who you are and your role, which single process we capture today.
+- **Objective:** what must a new hire be able to **do** on their own within 2 weeks? (this fixes the scope)
+- Which case is most frequent, and which one hurts most if done badly? (pick ONE to start)
+- **Start from a real episode:** "Think of the LAST time you did this. Walk me through that specific time, step by step." Never start from the abstract "how do you usually do it".
 
-**Phase 1, objective.** One question at a time: what result must this knowledge produce? What must a new hire do alone within 2 weeks? Which 3 cases are most frequent, and which 3 do most damage if handled badly? This is the distillation scope.
+## Step 2, the probing loop (this is the actual skill)
+For the chosen process, run this loop until you have concrete rules, then move to the next step or process. Each turn: read the last answer, pick the probe that attacks what is missing, ask ONE short question.
 
-**Phase 2, process map.** Take the most frequent case: how does the request arrive (channel)? What do you do first? Step by step to closing. Which systems do you open, in what order? Where do you wait on someone else? Repeat for the 2-3 key processes.
+Probe library (choose by what the last answer lacked):
+- **Real case, not abstract.** Keep anchoring to a specific instance: "the last time...", "an example from this week".
+- **Pounce on hedge words.** When they say *usually, normally, it depends, obviously, just, more or less, you get a feel for it, then you see* — that is compiled tacit knowledge surfacing. Dig immediately. Example: they say "usually I approve the return if it's within terms" -> "You said 'usually'. When do you NOT approve it even within terms? And when do you approve it even out of terms?"
+- **Contrast with a novice.** "What would a new hire do here that looks right but is wrong? Why don't you do that?" Surfaces the unwritten rule by contrast.
+- **Chase the decision points.** At each step: "what could go differently here? how do you decide between A and B, exactly?" The branches are where the expertise lives.
+- **Official vs real.** "That is the procedure on paper. What actually happens when you're slammed, or the case is weird?" The gap between the two is pure tacit knowledge.
+- **Ask for the artifact.** "Show me the actual email / ticket / file from that time" instead of a description. The real object jogs the steps the story drops.
 
-**Phase 3, laddering (this is where the value is).** On each process, dig: when do you NOT do it this way (the exceptions are the tacit knowledge)? How do you choose between A and B, the exact criterion? What mistake do new people make that looks small but costs a lot? What is an unwritten rule no manual states? What do you do when you do not know the answer, and what must you never promise?
+**Target per branch:** a rule = `trigger` + `action` + at least one `exception` + the `decision criterion` + `source`.
+**Stop condition per branch:** once you have that, move on. Do not over-mine one point, and do not leave it vague either.
 
-**Phase 4, verify.** Mirror back 5-8 key rules and let the person correct: "so the rule is: do X, except when Y, right?" Repeat until confirmed.
+## Step 3, reconstruct and correct (every 3-4 exchanges)
+People are bad at generating their own process and great at correcting a proposed one. So do not only ask, **hypothesize and reflect back**: "So the flow is A, then B, then C, and the tricky part is B when X happens. Right?" Let them fix it. This is how you show a person a workflow they did not know they were following.
 
-## How to interview well
-- One question at a time. No volleys.
-- Follow-ups from the answer, not from a script.
-- Speak the person's language, no jargon.
-- Push on exceptions and decision criteria, that is the know-how nobody wrote down.
-- Do not fill silences with your own interpretation, ask.
-- Close each block by mirroring and letting them correct.
+## Step 4, verify and close
+Mirror back 5-8 key rules as trigger / action / exception and let the person correct until confirmed. Then write.
+
+## If the know-how belongs to someone else
+The person who installed cowork-os is often not the expert. If the process lives in someone else's head, do not fake it. Produce a ready-to-use **interview plan** for the real expert: the objective, the one process, and 8-12 tailored opening probes that follow the loop above. Offer to run the interview live with them, or to capture their answers when available. Write the plan to `context/processes/<process>_interview-plan.md`.
 
 ## Output: write it into the workspace (the company brain)
-Write the extracted knowledge into the existing cowork-os folders (create files if missing):
-- `context/processes/<process>.md` — the step-by-step for each process, in plain language.
-- `context/glossary.md` — internal terms, system names, acronyms.
-- `decisions/decisions_log.md` — each rule as a decision with a status, phrased as `trigger -> action`, with `exceptions`, and `source: interview with <role>, <date>, "<quote>"` and a confidence (`high` = said explicitly, `medium` = synthesis, `needs_review` = inferred; only high/medium are used in production).
+Write the extracted knowledge into the cowork-os folders (create files if missing):
+- `context/processes/<process>.md` — the readable source of truth: objective, when it applies, the real step-by-step, the decision points, the exceptions and edge cases, the unwritten rules, links to the rules in the log, source (who and when), open questions, last updated.
+- `context/glossary.md` — internal terms, system names, acronyms that came up.
+- `decisions/decisions_log.md` — each rule as a decision with a status, phrased as `trigger -> action`, with `exceptions`, and `source: interview with <role>, <date>, "<quote>"`, and a confidence (`high` = said explicitly, `medium` = synthesis, `needs_review` = inferred; only high and medium are used in production).
 - `decisions/open_questions.md` — gaps that emerged, to clarify with other people.
 
 Optional, for agent consumption: `context/knowledge/rules.jsonl`, one rule per line (id, type, domain, trigger, action, exceptions, anti_patterns, source, confidence). Keep the human `context/processes/*.md` as the readable source of truth.
 
 ## Validate (optional but recommended)
-After the interview, generate 5-10 test cases from the extracted know-how ("given this scenario, what does the rule do?") and check that an agent applies the right rule and respects the exceptions. It is the only way to know the company brain has actually learned instead of improvising.
+After the interview, generate 5-10 test cases from the extracted know-how ("given this scenario, what does the rule do?") and check that an agent applies the right rule and respects the exceptions. It is the only way to know the company brain actually learned instead of improvising.
 
-## Example question bank, domain: customer care / support
-**Objective:** what must a new support agent handle alone within 2 weeks? Which 3 request types are 80% of volume? Which 3 situations lose the customer if mishandled?
-**Process map:** most common request, which channel, what do you check first, then, until you consider it closed? Which systems, in what order, where do you have to ask someone else?
-**Laddering:** when do you NOT follow the standard script? How do you tell if a customer must be calmed before being solved? What is the exact threshold to escalate to a senior/human? What is the difference between a correct answer and one the customer actually accepts? What do you do when you do not know, and what must you never promise? A new-hire mistake that looks small but costs a lot? Unwritten tone rules, what to never say to a customer? Edge cases: out-of-policy return, rightly angry customer, ambiguous request, double order.
-**Verify:** mirror 5-8 rules ("escalate when X, unless Y, right?") and let them correct.
+## Example probes, domain: customer care / support
+- **Frame:** what must a new support agent handle alone in 2 weeks? Which 3 request types are 80% of volume? Which one loses the customer if mishandled? Walk me through the last hard one.
+- **Loop:** when do you NOT follow the standard script? How do you tell a customer must be calmed before being solved? What is the exact threshold to escalate to a senior or a human? What is the difference between a correct answer and one the customer actually accepts? What do you do when you do not know, and what must you never promise? What does a new hire get wrong that looks fine? Unwritten tone rules, what to never say? Edge cases: out-of-policy return, rightly angry customer, ambiguous request, double order.
+- **Reconstruct:** "So: request arrives, you check A, then B, and you escalate when X unless Y. Right?"
 
-> To add a domain (sales, admin, operations): duplicate this block and rewrite only the laddering questions. The phased skeleton stays identical.
+> To add a domain (sales, admin, operations, production): keep the same loop and swap only the domain-specific probes. The engine does not change.
 
 ## Close with a Memory Update
-End with the cowork-os Memory Update: list what you wrote (processes, decisions/rules, glossary terms, open questions) and where. Run `/cowork-os:memory-update` for the full protocol, or do it inline.
+End with the cowork-os Memory Update: list what you wrote (processes, decisions and rules, glossary terms, open questions) and where. Run `/cowork-os:memory-update` for the full protocol, or do it inline.

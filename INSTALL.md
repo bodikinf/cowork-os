@@ -54,7 +54,16 @@ For everything approved, **create the files filled with the user's real answers*
 ### STEP 6 — Set up the routines
 For each approved routine, create it as a scheduled task with the agreed cadence (use the prompt bodies in `scheduled-tasks/`, filled for this user). Confirm each schedule in plain language. Re-state that outreach/engagement routines only ever **draft**.
 
-### STEP 7 — Hand off
+### STEP 7 — Offer the first process capture (the operational layer)
+The workspace now understands the **business**, not yet **how work actually gets done**. And reading the user's files (intake B/C/D) only captures what is already written, while the valuable know-how is tacit and lives in people's heads. So offer ONE capture, without making setup heavy.
+
+Ask the **bus-factor** question to find the process worth capturing first (multiple choice, so a non-technical user can point instead of generate):
+
+> *"If your most experienced person were away for a week, what would break first?"* — options: customer care, quotes/offers, client onboarding, admin/paperwork, production/delivery, other.
+
+On a pick, run the **`knowledge-transfer`** skill on that single process (about 15 minutes, depth over coverage; the brain grows over more sessions). If that know-how lives in **someone else's** head, produce an interview plan for that person instead of faking it. Always skippable and non-invasive: *"we can do this whenever, just say `/cowork-os:knowledge-transfer`."*
+
+### STEP 8 — Hand off
 - Show the resulting folder tree.
 - Teach the one habit that makes it compound: end important tasks with a **Memory Update**. Offer to do it automatically.
 - Give 2–3 concrete next actions (e.g. *"try: esegui l'editor sul mio sito"*).
