@@ -3,6 +3,8 @@
 
 ---
 
+> **Where the bundled skills live.** The skills that ship with cowork-os (`cowork-os-core`, `knowledge-transfer`) are inside the plugin at [`plugins/cowork-os/skills/`](../plugins/cowork-os/skills/) and load automatically. **This `skills/` folder is the catalog plus room for your own custom skills**, which is why it is mostly just this README.
+
 ## Skills that pair with cowork-os · Skill che si abbinano
 
 These are named so Claude can invoke them precisely. **Most are not bundled in this repo** (the first-party `knowledge-transfer` skill ships with the kit); the rest are separate Cowork skills. Claude uses whichever are installed; if a useful one is missing, it names it and points you to **Settings → Capabilities**.
