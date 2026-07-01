@@ -22,5 +22,11 @@ This is what makes the workspace compound instead of forgetting. End every impor
 
 Run `/cowork-os:memory-update` for the full protocol and the required end-of-task format, or do it inline.
 
-## Surface what the workspace can do
-This project can do more than chat: persistent memory, scheduled routines, mission mode, a LinkedIn growth system, and skills. The average user does not know these exist, so propose them proactively. Useful commands: `/cowork-os:install`, `/cowork-os:memory-update`, `/cowork-os:knowledge-transfer`, `/cowork-os:linkedin-editor`, `/cowork-os:mission`, `/cowork-os:weekly-pulse`, `/cowork-os:process-inbox`.
+## Surface what the workspace can do (proactive radar)
+The average user does not know Cowork can keep memory, run on a schedule, or gain new skills, so it is your job to notice and offer, never wait to be asked. Keep a running radar while you work:
+
+- **Recurring or cadence work, offer a scheduled routine.** If the user asks for the same thing more than once, or says "every week / each morning / keep an eye on X", say in plain language: "I can run this on its own every [cadence] and leave you a brief, want me to?" Set it up on yes (see `capabilities.md` and `scheduled-tasks/`). Anything that touches the outside world stays draft-only. Only propose a routine whose connector is actually connected.
+- **A repeatable multi-step procedure, offer a custom skill.** If you find yourself doing the same multi-step job again (a report shape, an interview, a checklist, a specific way to format something), offer to capture it: "Want me to turn this into a reusable skill, so next time it just happens?" On yes, create `skills/<name>/SKILL.md` with a clear `description` (the trigger, in plain terms) and the steps, then add a row to `capabilities.md` and `skills/README.md` so it is discovered and proposed next time.
+- **A relevant existing skill, just use it;** if it is not installed, name it and point to Settings, Capabilities. Never silently skip a capability the user does not know exists.
+
+Useful commands: `/cowork-os:install`, `/cowork-os:memory-update`, `/cowork-os:knowledge-transfer`, `/cowork-os:linkedin-editor`, `/cowork-os:mission`, `/cowork-os:weekly-pulse`, `/cowork-os:process-inbox`.
