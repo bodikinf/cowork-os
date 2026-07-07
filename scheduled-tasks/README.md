@@ -8,13 +8,13 @@
 
 A **scheduled task** is a prompt that Claude Cowork runs automatically on a cadence you set — every Monday at 08:00, the 1st and 15th of the month, weekday mornings, and so on. Instead of remembering to run your weekly marketing review or your LinkedIn engagement scan, you wire it up once and the agent does it for you, reading from and writing back to your `cowork-os` memory files.
 
-This module ships **10 task templates**. Each one is a self-contained Markdown file with:
+This module ships **14 task templates**. Each one is a self-contained Markdown file with:
 
 - a **bilingual one-line header** (what it does + suggested cadence),
 - a **suggested cron schedule**, and
 - the **prompt body** (in Italian, with `{{placeholders}}` you fill in).
 
-They are templates: replace `{{COMPANY}}`, `{{FOUNDER}}`, `{{WEBSITE}}`, `{{MISSION}}`, etc. with your own values (see [`../cowork.config.example.md`](../cowork.config.example.md)), then schedule the ones you want. Nothing here sends an email, a DM, or a connection request without your explicit approval — the outreach tasks are **draft-only or propose-only** by design.
+They are templates: replace `{{COMPANY}}`, `{{FOUNDER}}`, `{{WEBSITE}}`, `{{MISSION}}`, etc. with your own values (see [`../cowork.config.example.md`](../cowork.config.example.md)), then schedule the ones you want. The outreach tasks are **draft-only or propose-only** by design — with **one exception**: `linkedin-connection-batch` sends connection requests, but only from a queue you pre-approved (never pitch DMs or emails).
 
 ### How to recreate one in Claude Cowork
 
@@ -36,24 +36,24 @@ Claude will confirm the schedule and save it. You can change or cancel it any ti
 
 - Fill the placeholders for that task (company, founder, website, mission, keywords…).
 - Make sure the **connectors** the task needs are linked in your Cowork project: analytics/ads (e.g. Supermetrics, Google Ads, GA4) for the marketing tasks, **Claude in Chrome** for the LinkedIn tasks, and your **CRM** for the founder review.
-- Keep the safety rails: the LinkedIn and outreach tasks are deliberately **read-only / draft-only**. Don't remove the "non inviare nulla senza approvazione" lines.
+- Keep the safety rails: the LinkedIn and outreach tasks are deliberately **read-only / draft-only** — the one exception is `linkedin-connection-batch`, which sends connection requests from a queue you pre-approved. Don't remove the approval-gate lines.
 
 ---
 
 ## IT — Cosa sono
 
-> **EN —** Module landing page: what scheduled tasks are, how to recreate each one in Cowork, and the table of the 10 tasks. Update when a task is added, removed, or its cadence changes.
-> **IT —** Pagina di apertura del modulo: cosa sono gli scheduled task, come ricrearli in Cowork e la tabella dei 10 task. Aggiornare quando un task viene aggiunto, rimosso o cambia cadenza.
+> **EN —** Module landing page: what scheduled tasks are, how to recreate each one in Cowork, and the table of the 14 tasks. Update when a task is added, removed, or its cadence changes.
+> **IT —** Pagina di apertura del modulo: cosa sono gli scheduled task, come ricrearli in Cowork e la tabella dei 14 task. Aggiornare quando un task viene aggiunto, rimosso o cambia cadenza.
 
 Un **task pianificato** è un prompt che Claude Cowork esegue automaticamente con la cadenza che imposti tu — ogni lunedì alle 08:00, il 1 e il 15 del mese, le mattine feriali, e così via. Invece di ricordarti di lanciare la review marketing o lo scan di engagement su LinkedIn, lo configuri una volta e l'agente lo fa al posto tuo, leggendo e riscrivendo i tuoi file di memoria `cowork-os`.
 
-Questo modulo include **10 template di task**. Ogni file Markdown è autonomo e contiene:
+Questo modulo include **14 template di task**. Ogni file Markdown è autonomo e contiene:
 
 - un **header bilingue di una riga** (cosa fa + cadenza suggerita),
 - una **cron suggerita**, e
 - il **corpo del prompt** (in italiano, con i `{{placeholders}}` da compilare).
 
-Sono template: sostituisci `{{COMPANY}}`, `{{FOUNDER}}`, `{{WEBSITE}}`, `{{MISSION}}`, ecc. con i tuoi valori (vedi [`../cowork.config.example.md`](../cowork.config.example.md)), poi pianifica quelli che ti servono. Nessun task qui invia email, DM o richieste di collegamento senza la tua approvazione esplicita — i task di outreach sono **draft-only o propose-only** per scelta.
+Sono template: sostituisci `{{COMPANY}}`, `{{FOUNDER}}`, `{{WEBSITE}}`, `{{MISSION}}`, ecc. con i tuoi valori (vedi [`../cowork.config.example.md`](../cowork.config.example.md)), poi pianifica quelli che ti servono. I task di outreach sono **draft-only o propose-only** per scelta — con **un'eccezione**: `linkedin-connection-batch` *invia* le richieste di collegamento, ma solo da una coda che hai pre-approvato (mai DM di pitch, mai email).
 
 ### Come ricrearne uno in Claude Cowork
 
@@ -75,11 +75,11 @@ Claude conferma la pianificazione e la salva. Puoi modificarla o annullarla quan
 
 - Compila i placeholder di quel task (azienda, founder, sito, missione, keyword…).
 - Assicurati che i **connettori** richiesti siano collegati nel tuo progetto Cowork: analytics/ads (es. Supermetrics, Google Ads, GA4) per i task marketing, **Claude in Chrome** per i task LinkedIn, e il tuo **CRM** per la founder review.
-- Mantieni i paletti di sicurezza: i task LinkedIn e di outreach sono volutamente **solo lettura / draft-only**. Non rimuovere le righe "non inviare nulla senza approvazione".
+- Mantieni i paletti di sicurezza: i task LinkedIn e di outreach sono volutamente **solo lettura / draft-only** — l'unica eccezione è `linkedin-connection-batch`, che invia le richieste di collegamento da una coda che hai pre-approvato. Non rimuovere le righe di approvazione.
 
 ---
 
-## The 10 tasks / I 10 task
+## The 14 tasks / I 14 task
 
 | # | Task file | Suggested cron | Cadence | What it does (one line) |
 |---|-----------|----------------|---------|--------------------------|
@@ -92,7 +92,11 @@ Claude conferma la pianificazione e la salva. Puoi modificarla o annullarla quan
 | 7 | [`mission-weekly-review.md`](./mission-weekly-review.md) | `30 8 * * 1` | Mon 08:30 | Reconstructs your active mission's state, checks accepted connections + news, updates next actions, reports only decisions you owe. |
 | 8 | [`linkedin-connection-batch.md`](./linkedin-connection-batch.md) | `0 10 * * 1` | Weekly (Mon 10:00) | Works the outreach queue and sends pending LinkedIn connection requests (personalized note each); never pitch DMs. |
 | 9 | [`founder-weekly-review.md`](./founder-weekly-review.md) | `0 9 * * 1` | Mon 09:00 | Reads your live CRM pipeline + Startup OS → this week's ready-to-run agenda to move a deal forward (draft-only). |
-| 10 | [`founder-daily-brief.md`](./founder-daily-brief.md) | `30 7 * * 1-5` | Weekdays 07:30 | Morning chief-of-staff brief: today's agenda + inbox/leads to handle + mission urgencies, in one short read (read-only). |
+| 10 | [`founder-daily-brief.md`](./founder-daily-brief.md) | `30 7 * * 1-5` | Weekdays 07:30 | Morning chief-of-staff brief: today's agenda + inbox/leads + pipeline + doc-changes + mission urgencies, in one short read (read-only). |
+| 11 | [`daily-signal-sweep-am.md`](./daily-signal-sweep-am.md) | `30 7 * * 1-5` | Weekdays 07:30 | Reads email + Slack (+ optional Notion/Drive) since the watermark → structured signals; promotes decisions/commitments to `decisions/decision_candidates.md` (read-only). |
+| 12 | [`daily-signal-sweep-pm.md`](./daily-signal-sweep-pm.md) | `0 18 * * 1-5` | Weekdays 18:00 | End-of-day capture of what went OUT (sent email + your Slack) → the decisions/commitments you made today, before they're forgotten (read-only). |
+| 13 | [`decision-radar.md`](./decision-radar.md) | `30 8 * * 1` | Mon 08:30 | Weekly decision governance: active / stale / conflicting / blocking + the 3 decisions to make this week; confirms candidates on approval. |
+| 14 | [`pipeline-deal-radar.md`](./pipeline-deal-radar.md) | `15 7 * * 1-5` | Weekdays 07:15 | Reads the CRM (e.g. Pipedrive) + `pipeline/rules.md` → overdue follow-ups, stalled deals, hygiene; writes `pipeline/deal_radar.md` and feeds the daily brief (read-only on the CRM). |
 
 > Cron format is `minute hour day-of-month month day-of-week`. Day-of-week: `1` = Monday … `7` = Sunday. Adjust to your timezone and rhythm — the cadences above are suggestions, not rules.
 >

@@ -4,12 +4,28 @@ Thumbs.db
 *.tmp
 .~lock.*#
 
+# Runtime locks from scheduled tasks (never commit)
+*_run.lock
+
+# Ingested signals contain PRIVATE email/Slack/Notion/Drive content — never ship real data.
+# The folder structure and README stay; the actual dumps do not.
+signals/email/*
+signals/slack/*
+signals/notion/*
+signals/drive/*
+!signals/email/.gitkeep
+!signals/slack/.gitkeep
+!signals/notion/.gitkeep
+!signals/drive/.gitkeep
+
 # Your real content — keep it OUT of the public repo.
 # Uncomment / adapt these in your own working copy so private memory never ships.
 # accounting/
 # business-development/
 # **/clients/
 # **/*.private.md
+# pipeline/deal_radar.md   # regenerated radar output — contains real deal names/amounts
+# pipeline/rules.md        # if it holds real client examples / thresholds
 
 # Secrets
 .env

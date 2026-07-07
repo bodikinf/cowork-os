@@ -12,6 +12,8 @@ CONTESTO E FILE (leggili sempre, sono la fonte di verità):
 - Testi delle note di collegamento: `missions/{{MISSION_SLUG}}/outreach_assets.md` (sezione "1. Note di collegamento")
 - Account/persone: `missions/{{MISSION_SLUG}}/target_accounts.md`
 
+PREFLIGHT: se uno di questi file non esiste ancora, copialo dallo stub in `missions/_TEMPLATE/` e **fermati** con un report — la coda e i testi vanno compilati prima di inviare. **Non inventare** target, URL o note.
+
 COSA FARE, in ordine:
 1. Leggi `linkedin_queue.md`. Prendi le voci con stato ⏳ (in coda). Lavora al massimo 12 voci per run.
 2. Usa gli strumenti Claude in Chrome (`mcp__Claude_in_Chrome__*`; caricali via ToolSearch se necessario). Verifica di essere loggato su LinkedIn come {{FOUNDER}}. Se Chrome non è connesso o non sei loggato, NON procedere: scrivi un breve report che spieghi il blocco e fermati.

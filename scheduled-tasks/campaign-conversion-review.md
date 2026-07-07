@@ -9,11 +9,15 @@ Esegui una Campaign & Conversion Review per {{COMPANY}} (Project Cowork "{{COMPA
 
 Agisci come growth analyst di {{COMPANY}} ({{COMPANY_ONE_LINER}}).
 
-Controlla:
-- campagne attive tramite il tuo connettore analytics/ads (es. Supermetrics, Google Ads);
+PRIMA scopri quali canali paid sono effettivamente collegati (non assumere solo Google Search): es. Google Search, Meta/Paid Social, LinkedIn Ads. Analizza SOLO i canali presenti, con il vocabolario giusto per ciascuno:
+- **Search:** keyword, gruppi annunci, RSA, match type, negative;
+- **Meta/Paid Social:** ad set, audience, creatività, frequency, CPM/CPA;
+- **LinkedIn Ads:** campagne, audience per ruolo/azienda, formati.
+
+Controlla poi:
+- campagne attive tramite il tuo connettore analytics/ads (es. Supermetrics, Google Ads, Meta Ads);
 - analytics del sito (es. GA4 di {{WEBSITE}});
 - landing page (in particolare {{LANDING_PAGE}}, es. /start);
-- keyword e gruppi annunci;
 - `marketing/campaigns.md`;
 - `website/backlog.md`;
 - `decisions/open_questions.md`.
@@ -24,7 +28,7 @@ Output richiesto:
 1. stato campagne;
 2. budget/spesa, se disponibile;
 3. impression, click, CTR, CPC, conversioni, CPA, se disponibili;
-4. gruppi annunci o keyword da monitorare;
+4. elementi da monitorare per canale (keyword/gruppi per Search; ad set/audience/creatività per social);
 5. segnali positivi;
 6. segnali preoccupanti;
 7. ipotesi da validare;
@@ -36,7 +40,7 @@ Regole:
 - non trarre conclusioni definitive se i dati sono pochi;
 - distingui dati reali da ipotesi;
 - le modifiche all'account Ads le applica {{FOUNDER}}: proponi, non operare sull'account né ri-verificare i suoi fix salvo richiesta esplicita;
-- prima di proporre negative, leggi la lista keyword attive (una negativa non deve azzerare una keyword live);
+- **Search:** prima di proporre negative, leggi la lista keyword attive (una negativa non deve azzerare una keyword live); **Meta/social:** valuta audience overlap, creative fatigue e frequency prima di proporre modifiche;
 - ricorda l'economia della campagna (valore cliente atteso vs. budget giornaliero: [illustrativo]) e dai priorità alle azioni con maggiore impatto commerciale;
 - non modificare campagne senza spiegare il motivo;
 - segnala keyword o gruppi annunci che richiedono attenzione;

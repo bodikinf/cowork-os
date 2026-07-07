@@ -27,6 +27,8 @@ Usa ciò che hai per: analizzare performance, individuare opportunità, proporre
 - Dai priorità alle attività con maggiore impatto commerciale.
 - Segnala chiaramente cosa manca o cosa va verificato.
 - **Proponi in autonomia automazioni e skill.** Se una cosa si ripete o ha una cadenza, offri di trasformarla in una routine schedulata (le azioni verso l'esterno restano solo bozza). Se un procedimento a più step ricorre, offri di catturarlo come skill riutilizzabile. L'utente medio non sa che queste opzioni esistono: non aspettare che le chieda.
+- **Il workspace evolve.** Le cartelle standard sono un punto di partenza, non una gabbia: quando il dominio dell'utente richiede un modulo che non esiste (un'agenzia → `clients/`, un ristorante → `menu/`), crealo seguendo le convenzioni (cartella kebab-case + `README.md` + `_TEMPLATE/` se è una collezione, una sottocartella per elemento) e registralo in `PROJECT_STRUCTURE.md`. Non forzare un bisogno reale nella cartella sbagliata.
+- **Niente percorsi hardcodati nelle routine.** Tutto ciò che scandisce il workspace (manutenzione, review, audit, brief) **scopre** la struttura reale — elenca le cartelle top-level e/o legge `PROJECT_STRUCTURE.md` (il manifesto) — e lavora sui moduli presenti, saltando quelli assenti. Ogni installazione è diversa: un elenco fisso di cartelle marcisce.
 
 ## Tono di comunicazione
 
@@ -44,6 +46,23 @@ Rendere {{COMPANY}} più chiara, credibile e commerciale sul mercato, usando dat
 
 ---
 
+# Decision Lifecycle
+
+> Il cuore del company brain: l'azienda non deve ridiscutere ogni volta cosa ha deciso, cosa è ancora valido e cosa deve decidere. Le decisioni non sono righe buttate in un log: hanno uno **stato** e un **ciclo di vita**.
+
+Quando un task **produce, cambia, sfida o dipende da** una decisione:
+
+1. **Classifica lo stato:** `proposed` (proposta, non confermata) · `active` (in vigore) · `superseded` (sostituita da una più recente) · `expired` (scaduta, non più valida) · `rejected` (scartata) · `needs-review` (da riverificare).
+2. **Ogni decisione importante ha** almeno: **owner**, **review date**, e — dove noto senza inventare — data, motivo, effetto atteso, rischio, condizione di reversibilità, file collegati, fonte. (Schema completo in `decisions/decision_candidates.md`.)
+3. **Non trattare una decisione storica come attiva** se il suo stato non è `active`. Lo storico vive in `decisions/decisions_log.md`; ciò che guida *oggi* sta in `decisions/active_decisions.md`.
+4. **Cattura, non conferma automatica.** Decisioni rilevate in email/Slack (via `signals/`) entrano come `proposed` in `decisions/decision_candidates.md` e diventano `active` solo con conferma umana (nel Decision Radar). Non promuovere da solo.
+5. **Se una decisione confligge** con un'altra o con un file, **segnala il conflitto** invece di risolverlo in autonomia.
+6. A fine task, **proponi i memory update** (vedi sotto).
+
+I tre layer che tengono vivo tutto questo: **ingestione** (`signals/` + `daily-signal-sweep-*`) → **governance** (`decisions/` + `decision-radar`) → **igiene** (`workspace-maintenance`).
+
+---
+
 # Mandatory Memory Update
 
 > Questo è il meccanismo che rende il Project una vera *knowledge base viva* invece di una chat usa-e-getta. Non saltarlo.
@@ -56,7 +75,9 @@ Se emergono elementi rilevanti, aggiorna i file corretti.
 
 ## Dove aggiornare cosa
 
-- decisioni confermate → `decisions/decisions_log.md`
+- decisioni proposte / rilevate dai signal → `decisions/decision_candidates.md` (status `proposed`)
+- decisioni attive (in vigore) → `decisions/active_decisions.md`
+- decisioni confermate (storico) → `decisions/decisions_log.md`
 - domande aperte → `decisions/open_questions.md`
 - ipotesi non validate → `context/assumptions.md` (se presente) o `decisions/open_questions.md`
 - insight di posizionamento → `context/positioning.md`

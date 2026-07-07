@@ -64,9 +64,10 @@ The "multiple agents" are separate runs and sub-agents that coordinate through t
 | **Project Instructions** | The system prompt that turns a generic assistant into a strategist that always checks sources, separates facts from assumptions, and updates work state. |
 | **Relentless Outcome Workflow** | A method for *ambitious missions*: pursue an outcome, not a task. Route maps, evidence logs, stop conditions. |
 | 🚩 **Knowledge Transfer** | An objective-first interview that captures the tacit know-how in a person's head (the exceptions, the decision criteria, the unwritten rules) and writes it into the workspace as processes, rules with a source and a glossary. It builds the company brain from your people, not just your files. |
+| 🚩 **Decision Lifecycle + Radar** | Decisions become status-carrying records (owner, review date, reversal condition), fed by a daily **signal sweep** that reads email/Slack and captures the decisions/commitments made there. A weekly **Decision Radar** surfaces what's active, stale, conflicting, blocking, and the 3 to decide this week. Stops the team from re-deciding and contradicting itself. |
 | 🚩 **LinkedIn Growth OS** | A full system to turn know-how into authority and leads: strategy, a content engine (6 formats + hook/CTA banks), a reputation engine, an engagement playbook, and a runnable 8-step editor. |
 | 🚩 **Missions** | The outcome framework, packaged as a copy-paste mission template. |
-| 🚩 **Scheduled tasks** | 10 ready-to-use recurring automations (weekly marketing pulse, campaign review, workspace maintenance, trend hunter, engagement radar, mission review, daily founder brief…) as prompt templates + a setup guide. |
+| 🚩 **Scheduled tasks** | 14 ready-to-use recurring automations (weekly marketing pulse, campaign review, workspace maintenance, trend hunter, engagement radar, mission review, daily founder brief, daily signal sweep AM/PM, decision radar, pipeline deal radar…) as prompt templates + a setup guide. |
 
 ### Why it works
 
@@ -186,7 +187,8 @@ cowork-os/
 ├── context/                     # overview · positioning · services · tone of voice · processes
 ├── marketing/                   # strategy · campaigns · content
 ├── website/                     # notes · backlog · homepage copy
-├── decisions/                   # decisions log · open questions
+├── decisions/                   # 🚩 decision lifecycle: candidates · active · log · radar · open questions
+├── signals/                     # 🚩 email/Slack ingestion → decision candidates (private, gitignored)
 ├── reviews/                     # weekly + maintenance review templates
 ├── missions/                    # 🚩 outcome-driven mission template
 ├── products/                    # product-workstream pattern

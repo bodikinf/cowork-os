@@ -15,7 +15,7 @@ Leggi tutti i record. Poi costruisci la review attorno a questi tre tagli, ordin
 3. CONFLITTI/DA VERIFICARE — qualsiasi record le cui Note segnalano un conflitto fonti (es. referente/angolo incoerente) o un dato da confermare: vanno risolti PRIMA di ricontattare.
 
 == FONTE SECONDARIA: lo Startup OS ==
-La cartella del progetto (`context/`, `strategy/`, `market/`, `product/`, `business_development/`, `sales_assets/`, `decisions/`, `reviews/`). Usa per contesto, decisioni, domande aperte (`decisions/open_questions.md`), ipotesi. Se un dato nei file contraddice il CRM, il CRM vince per lo stato della trattativa; segnala la discrepanza.
+La cartella del progetto. **Scopri i moduli presenti** (elenco cartelle top-level e/o `PROJECT_STRUCTURE.md`, il manifesto) invece di assumere un set fisso: tipicamente ci sono `context/`, `decisions/`, `reviews/` più i moduli commerciali effettivamente presenti (es. `business-development/`, `products/`, `clients/`, `missions/`). Usa per contesto, decisioni, domande aperte (`decisions/open_questions.md`), ipotesi. Se un dato nei file contraddice il CRM, il CRM vince per lo stato della trattativa; segnala la discrepanza.
 
 == OUTPUT ==
 A. Snapshot pipeline: n. record per Stadio; quante trattative attive; quante scadenze questa settimana.

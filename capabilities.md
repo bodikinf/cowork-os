@@ -52,11 +52,26 @@
 - **Trigger:** the user has one or more of their own products (not just client work).
 - **Creates:** a `products/<name>/` from the template.
 
+### 🚩 `pipeline/` — CRM / sales layer (Pipedrive & co.)
+- **What:** the sales layer for anyone who runs a deal pipeline in a CRM. Captures their **sales rules** (real stages, what "stuck" means, no-reply threshold, priority criteria), holds **follow-up templates** in their voice, and produces a **deal radar** (overdue follow-ups, stalled deals, hygiene). The radar **feeds the daily brief** so the person reads one surface, not a separate CRM screen.
+- **Trigger:** the user manages deals/opportunities in a CRM (Pipedrive, HubSpot…), does outbound/inbound sales, says "deals go cold and I forget to follow up", or wants an assistant on their pipeline.
+- **Set up via Knowledge Transfer.** Don't invent the rules: run a focused `knowledge-transfer` session on the sales-follow-up process, looking at the real pipeline, then write `pipeline/rules.md`. The automations read that file.
+- **Creates:** `pipeline/rules.md`, `pipeline/deal_radar.md`, `pipeline/followup_templates.md`.
+- **Pairs with:** the `pipeline-deal-radar` scheduled task (feeds the brief) + the on-demand `pipeline-followup` skill (drafts follow-ups). Both draft-only / read-only on the CRM.
+- **Needs:** a CRM connector (read) — e.g. the Pipedrive MCP — and Gmail (read + drafts) for the follow-up skill. If the CRM isn't connected, the radar flags it and skips, without failing.
+
 ### 🚩 Knowledge Transfer, build the company brain from a person
 - **What:** a guided, objective-first interview that captures what a person knows (exceptions, decision criteria, unwritten rules) and writes it into the workspace as processes, rules with a source, a glossary and open questions. This is how the company brain gets built from people, not only from files.
 - **Trigger:** onboarding a new hire, a key person leaving or retiring, knowledge stuck in one head ("only Marco knows how"), or standardizing how a task is done.
 - **Runs by itself** when the user describes that pain, or on demand via `/cowork-os:knowledge-transfer`.
 - **Creates:** `context/processes/<process>.md`, updates to `decisions/decisions_log.md` (rules with source), `context/glossary.md`, `decisions/open_questions.md`.
+
+### 🚩 Decision Lifecycle + Decision Radar
+- **What:** stops the team from re-deciding and contradicting itself. Decisions become status-carrying records (`proposed → active → superseded/expired/rejected`, with owner + review date), fed by a daily **signal sweep** that reads email/Slack and captures the decisions/commitments made there. A weekly **Decision Radar** surfaces what's active, stale, conflicting, blocking, and the 3 decisions to make this week.
+- **Trigger:** a **team (2+ people)** whose decisions scatter across channels — Slack/email/calls/heads — and who ask "wait, did we decide X or Y?"; small team with no PMO/chief-of-staff. For a **solo founder** the full lifecycle is usually overkill: offer a lighter "this week's 3 decisions to make / remember" instead. Note: the signal sweep reads **email + Slack** — if the team decides mostly on WhatsApp/calls/other channels, say so up front (don't imply full coverage).
+- **Runs by itself** via the `daily-signal-sweep-am/pm` and `decision-radar` scheduled tasks; the lifecycle rule lives in `PROJECT_INSTRUCTIONS.md`.
+- **Creates:** `decisions/decision_candidates.md`, `decisions/active_decisions.md`, `decisions/decision_radar.md`, the `signals/` folder (email/Slack/Notion/Drive ingestion, private/gitignored).
+- **Needs:** email connector (read) + Slack connector (read) — both are full read sources. **Optional:** Notion (read) + Google Drive (read) add doc-change detection (the sweep flags edited pages/files in the pages/folders you tell it to watch, surfaced in the brief). If a connector isn't connected yet, the sweep skips it and flags it, without failing.
 
 ---
 
@@ -75,11 +90,15 @@
 | **mission-weekly-review** | Weekly status + next routes for an active mission. | has a mission | Mon 08:30 (`30 8 * * 1`) |
 | **linkedin-connection-batch** | Sends the queued, pre-approved connection requests. | does LinkedIn outreach | weekdays (`0 10 * * 1-5`) |
 | **founder-weekly-review** | A Monday founder review across your CRM + workspace. | founder wants a weekly OS review | Mon 09:00 (`0 9 * * 1`) |
-| **founder-daily-brief** | A short morning chief-of-staff brief: agenda + inbox/leads + mission urgencies (read-only). | founder wants a daily brief | weekdays 07:30 (`30 7 * * 1-5`) |
+| **founder-daily-brief** | A short morning chief-of-staff brief: agenda + inbox/leads + pipeline + doc-changes + mission urgencies (read-only). | founder/salesperson wants a daily brief | weekdays 07:30 (`30 7 * * 1-5`) |
+| **pipeline-deal-radar** | Reads the CRM + your sales rules → overdue follow-ups, stalled deals, hygiene. Feeds the daily brief (read-only on the CRM). | manages deals in a CRM (Pipedrive…) | weekdays 07:15 (`15 7 * * 1-5`) |
+| **daily-signal-sweep-am** | Morning: reads email + Slack (+ optional Notion/Drive) since the watermark → signals → decision candidates (read-only). | decisions live in email/Slack; docs in Notion/Drive | weekdays 07:30 (`30 7 * * 1-5`) |
+| **daily-signal-sweep-pm** | End-of-day: captures the decisions/commitments you made today (sent mail + your Slack) before they're forgotten. | same, capture-focused | weekdays 18:00 (`0 18 * * 1-5`) |
+| **decision-radar** | Weekly decision governance: active / stale / conflicting / blocking + the 3 to decide this week. | team re-decides / contradicts itself | Mon 08:30 (`30 8 * * 1`) |
 
-**Safety:** automations that touch the outside world (comments, connection requests, emails) **draft only** — nothing is sent without the user's approval. Say this out loud when proposing them.
+**Safety:** automations that touch the outside world **draft or propose** — with **one exception**: `linkedin-connection-batch` *sends* connection requests, but only from a queue you pre-approved (never pitch DMs, never emails). Everything else (comments, DMs, emails) is draft-only. Say this out loud when proposing them.
 
-**Connector check:** several routines only pay off if a connector is linked — `weekly-marketing-pulse` / `campaign-conversion-review` need analytics/ads; the LinkedIn routines need Chrome; `founder-weekly-review` needs a CRM; `founder-daily-brief` needs calendar/email. **Only propose a routine whose connector is actually connected** — otherwise offer to connect it, or a lighter alternative, rather than scheduling a run that comes back empty.
+**Connector check:** several routines only pay off if a connector is linked — `weekly-marketing-pulse` / `campaign-conversion-review` need analytics/ads; the LinkedIn routines need Chrome; `founder-weekly-review` and `pipeline-deal-radar` need a CRM (e.g. Pipedrive); `founder-daily-brief` needs calendar/email (and, for its Pipeline line, the CRM). **Only propose a routine whose connector is actually connected** — otherwise offer to connect it, or a lighter alternative, rather than scheduling a run that comes back empty.
 
 ---
 
@@ -89,6 +108,7 @@
 
 - **Built-in strategy skill (bundled):** `senior-strategy-architect` turns any vague strategy / plan / GTM / growth / pricing / "what should I do?" ask into decision-grade strategy — diagnosis → strategic choice → operating plan → metrics → risks, with 14 domain playbooks and an anti-fluff QA pass. Ships with the kit and fires on its own; use it whenever the user wants a *strategy*, not a list of tactics.
 - **This kit's built-in "editor":** `linkedin/editor_workflow.md` works like a runnable LinkedIn editor ("esegui l'editor su [asset]") with no install. Mention it whenever the user wants to produce posts.
+- **Bundled sales skill:** `pipeline-followup` prepares **draft** follow-up emails for CRM deals gone quiet — reads the deal's Gmail thread + `pipeline/rules.md`, writes a Gmail draft in the person's voice, never sends. On-demand ("controlla la pipeline e preparami i follow-up"). Pairs with the `pipeline/` module + `pipeline-deal-radar`.
 - **Named skills the user may already have** (use them if installed, otherwise tell the user they exist — see `skills/README.md`):
   - `document-data-extractor` → turning documents / invoices / receipts into a spreadsheet;
   - `validation-outreach` → cold messages to book discovery interviews;
@@ -107,10 +127,13 @@
 - *"I run ads" (analytics/ads connected)* → marketing/ + weekly-marketing-pulse + campaign-conversion-review. *Organic-only* → marketing/ in organic shape + a lighter LinkedIn/content pulse; skip the ads routines.
 - *"I have a website"* → website/ + website-content-review.
 - *"I have my own product(s)"* → products/.
+- *"I manage deals in a CRM / Pipedrive" / "deals go cold and I forget to follow up" / "I want an assistant on my pipeline"* → `pipeline/` + `pipeline-deal-radar` (feeds the daily brief) + the `pipeline-followup` skill. Set the rules via a focused `knowledge-transfer` session on the sales process — don't invent thresholds. Needs a CRM connector (read) + Gmail (drafts). **For a solo salesperson, don't stack three morning routines:** the `founder-daily-brief` already regenerates the pipeline inline from `pipeline/rules.md`, so scheduling *just the brief* is usually enough — add the standalone `pipeline-deal-radar` only if they want the fuller radar artifact or have heavy/multiple pipelines. And check first which channel their deals actually live in: if follow-ups happen mostly on WhatsApp/phone, say up front the skill (Gmail-only) can't see those — don't imply full coverage.
+- *"I live in Google + Notion" / "tell me if a doc changed"* → founder-daily-brief + the signal sweep with Notion/Drive change-detection (tell it which pages/folders to watch).
 - *"I want to land [big partner / dream client]"* → missions/ + mission-weekly-review.
 - *"I do outreach"* → linkedin-connection-batch and/or the validation-outreach skill.
 - *"I want a morning brief / a chief-of-staff"* → founder-daily-brief.
 - *"I have a pile of unsorted material"* → the `_inbox/` intake flow ("process the inbox").
 - *"Someone key is leaving" / "onboarding is slow" / "only one person knows how to do X"* → the **knowledge-transfer** interview (`/cowork-os:knowledge-transfer`).
 - *"Give me a strategy / GTM / growth / pricing plan" / "what should I do?"* → the **senior-strategy-architect** skill (diagnosis-first, explicit trade-offs, operating plan with metrics and risks).
+- *"We keep re-deciding / forgetting what we decided" / "decisions are all in email and Slack"* → Decision Lifecycle: `daily-signal-sweep-am/pm` + `decision-radar` (needs email read, ideally Slack read).
 - *Always* → Core + workspace-maintenance + the Memory Update habit.

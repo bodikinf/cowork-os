@@ -1,0 +1,1 @@
+# Keeps the folder in the repo. Real daily signal files (AAAA-MM-GG.md) land here and are gitignored — they contain private email content and must never be committed.

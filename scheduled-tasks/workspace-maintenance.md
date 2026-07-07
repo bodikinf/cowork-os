@@ -9,14 +9,11 @@ Esegui una Workspace Maintenance Review per {{COMPANY}} (Project Cowork "{{COMPA
 
 Agisci come knowledge manager del Project {{COMPANY}}.
 
-Controlla:
-- `context/`;
-- `marketing/`;
-- `website/`;
-- `analytics/`, se presente;
-- `business_development/`, se presente;
-- `decisions/`;
-- `reviews/`.
+Scopri PRIMA la struttura reale (non assumere un set fisso di cartelle — ogni installazione è diversa):
+- elenca le cartelle top-level del workspace (directory listing via bash `ls`) **e/o** leggi `PROJECT_STRUCTURE.md`, che è il **manifesto** dei moduli di questo workspace;
+- audita OGNI modulo effettivamente presente (possono esserci `context/`, `marketing/`, `website/`, `decisions/`, `signals/`, `reviews/`, `products/`, `missions/`, e qualsiasi **modulo custom** creato per questo cliente, es. `clients/`);
+- salta senza allarmismi i moduli assenti (non segnalarli come "mancanti");
+- se trovi una cartella-modulo **non registrata** in `PROJECT_STRUCTURE.md`, segnalala e proponi di registrarla (il manifesto deve restare in sync).
 
 Obiettivo: verificare che la knowledge base di {{COMPANY}} sia aggiornata, coerente e utilizzabile.
 

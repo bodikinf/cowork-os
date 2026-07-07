@@ -9,6 +9,10 @@ Quando lavori, usa questa struttura per leggere e aggiornare le informazioni.
 
 Non duplicare contenuti tra file diversi. Se un'informazione potrebbe stare in più posti, scegli il file più specifico. Se non sei sicuro, aggiungila prima in `decisions/open_questions.md` o segnala il dubbio.
 
+> **Questo file è il MANIFESTO dei moduli del workspace.** Le cartelle qui sotto sono un punto di partenza, non un elenco chiuso: il workspace **evolve** e può avere moduli che qui non compaiono. Due conseguenze operative:
+> 1. **Crea moduli su bisogno.** Se il dominio richiede un modulo che non esiste (es. un'agenzia → `clients/`), crealo (vedi *Come aggiungere un modulo* in fondo) e **aggiungi la sua voce qui**.
+> 2. **Le routine scoprono la struttura, non la assumono.** Manutenzione, review, audit e brief leggono le cartelle reali e/o questo manifesto: nessun percorso hardcodato. Tieni quindi questo file **in sync** a ogni aggiunta/rinomina/rimozione di un modulo.
+
 ---
 
 ## Root
@@ -44,8 +48,17 @@ Strategia, campagne, contenuti e insight.
 
 ## `decisions/`
 
-- `decisions_log.md` — decisioni già prese, con motivazione e data. Non cancellare decisioni storiche.
+Il **Decision Lifecycle**: le decisioni hanno uno stato, non sono solo righe di log (vedi la sezione omonima in `PROJECT_INSTRUCTIONS.md`).
+
+- `decision_candidates.md` — inbox delle decisioni: proposte rilevate (spesso dai `signals/`) in stato `proposed`, in attesa di conferma umana. Non autorevoli finché non confermate.
+- `active_decisions.md` — vista viva: solo le decisioni `active` che guidano il lavoro oggi (owner + review date).
+- `decisions_log.md` — storico completo, con motivazione e data. Non cancellare decisioni storiche.
+- `decision_radar.md` — output settimanale generato dal task `decision-radar` (attive / da rivedere / conflitti / bloccanti / 3 da decidere). Sovrascritto a ogni run.
 - `open_questions.md` — domande aperte, ipotesi da validare, bloccanti. Quando una domanda si chiude, registra la decisione in `decisions_log.md` e marca la voce come risolta (non eliminarla).
+
+## `signals/`
+
+Layer di **ingestione**: gli sweep (`daily-signal-sweep-am/pm`) leggono email, Slack e — se collegati — Notion e Google Drive (change-detection sui doc osservati), e li distillano in signal strutturati che alimentano i `decision_candidates`. `sync-state.md` tiene il watermark per fonte (idempotenza). **`email/`, `slack/`, `notion/` e `drive/` contengono contenuti privati e sono in `.gitignore`: mai committati.** Vedi `signals/README.md`.
 
 ## `reviews/`
 
@@ -63,6 +76,14 @@ Missioni ambiziose gestite col **Relentless Outcome Workflow** (`workflows/relen
 ## `products/`
 
 Un workstream per ogni **prodotto proprio** con vita propria (roadmap, validazione, GTM), separato dalla memory marketing. `_TEMPLATE/` è lo stampo. Il codice dei prodotti vive nei rispettivi repo, non qui.
+
+## `pipeline/`
+
+Il **layer commerciale** per chi lavora su un CRM (es. Pipedrive). Contiene le **regole di vendita** catturate dalla persona (stadi reali, cosa è "fermo", soglia di silenzio prima di un follow-up), i **template di follow-up** nella sua voce, e l'**output del deal radar**. Alimenta la sezione "Pipeline" del `founder-daily-brief` così la persona legge una sola superficie. Le regole sono generate con la `knowledge-transfer` skill sul processo di vendita; le automazioni (`pipeline-deal-radar` + skill `pipeline-followup`) leggono questi file, non hardcodano nulla. Il CRM resta la fonte di verità sullo stato dei deal: qui vivono le *regole* e gli *output*, non una copia della pipeline.
+
+- `rules.md` — regole del processo di vendita (stadi, definizione di "fermo", soglia no-reply, campi usati, criteri di priorità). Fonte: intervista KT.
+- `deal_radar.md` — output rigenerato dal task `pipeline-deal-radar` (scaduti / fermi / da sistemare). Sovrascritto a ogni run.
+- `followup_templates.md` — template di follow-up nella voce della persona, per tipo di situazione.
 
 ## `linkedin/`
 
@@ -92,3 +113,15 @@ Un workspace reale, completo e **sanitizzato** (`examples/yempik/`): è lo *show
 - **File datati**: `nome_YYYY-MM-DD.md`.
 - **Niente dati privati** nei file versionati pubblicamente: usa `{{placeholder}}` e tieni i contenuti reali fuori dal repo (vedi `.gitignore`).
 - **Separare sempre** fatti, ipotesi e raccomandazioni.
+
+## Come aggiungere un modulo
+
+Quando un bisogno reale non ha casa in una cartella esistente, creane una nuova invece di forzarlo altrove:
+
+1. **Cartella** kebab-case con nome chiaro (es. `clients/`, `menu/`, `events/`).
+2. Un **`README.md`** breve: a cosa serve, cosa contiene, quando aggiornarlo.
+3. Se è una **collezione** (molti elementi dello stesso tipo), un **`_TEMPLATE/`** come stampo e **una sottocartella per elemento** (es. `clients/<cliente>/`).
+4. **Registra il modulo qui** in `PROJECT_STRUCTURE.md`: aggiungi una sezione `## \`nome/\`` con una riga di descrizione. Questo è ciò che rende il modulo visibile alle routine (che scoprono la struttura da qui e dall'elenco cartelle).
+5. Se il modulo introduce un tipo di informazione nuovo per la **Memory Update**, aggiungi la riga corrispondente in `PROJECT_INSTRUCTIONS.md` (sezione "Dove aggiornare cosa").
+
+> Regola: **il manifesto e la struttura reale non devono mai divergere.** Chi aggiunge/rinomina/rimuove una cartella aggiorna anche questo file.

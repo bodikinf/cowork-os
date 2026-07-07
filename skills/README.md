@@ -13,6 +13,7 @@ These are named so Claude can invoke them precisely. **Most are not bundled in t
 |---|---|---|
 | `senior-strategy-architect` *(bundled)* | Turns any vague strategy/plan/GTM/growth/pricing ask into decision-grade strategy: diagnosis → strategic choice → coherent plan → metrics → risks, with 14 domain playbooks and anti-fluff QA. Fires on its own. | the user wants a *strategy*, not a list of tactics ("fammi una strategia", "growth ideas", "GTM plan", "what should I do?") |
 | `knowledge-transfer` *(bundled)* | Interviews a person and builds the company brain (processes, rules with source, glossary) into the workspace. Runs on its own or via `/cowork-os:knowledge-transfer`. | onboarding, a key person leaving, standardizing a process |
+| `pipeline-followup` *(bundled)* | Prepares **draft** follow-up emails for CRM deals gone quiet: reads the deal's Gmail thread + `pipeline/rules.md`, writes a Gmail draft in your voice, never sends. On-demand. | "controlla la pipeline e preparami i follow-up", "chi non mi ha risposto?", chasing stalled deals |
 | `linkedin-editor` | Turns any asset into ready-to-publish LinkedIn posts (8-step workflow). Also shipped here as a no-install workflow in `../linkedin/editor_workflow.md`. | "esegui l'editor su [asset]" |
 | `document-data-extractor` | Pulls receipts / invoices / docs into a clean Excel table. | you want document data tabulated |
 | `validation-outreach` | Cold messages that book *discovery* interviews (learning, not selling). | you want to talk to potential customers |
