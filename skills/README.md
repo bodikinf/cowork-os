@@ -3,14 +3,15 @@
 
 ---
 
-> **Where the bundled skills live.** The skills that ship with cowork-os (`cowork-os-core`, `knowledge-transfer`) are inside the plugin at [`plugins/cowork-os/skills/`](../plugins/cowork-os/skills/) and load automatically. **This `skills/` folder is the catalog plus room for your own custom skills**, which is why it is mostly just this README.
+> **Where the bundled skills live.** The skills that ship with cowork-os (`cowork-os-core`, `knowledge-transfer`, `senior-strategy-architect`) are inside the plugin at [`plugins/cowork-os/skills/`](../plugins/cowork-os/skills/) and load automatically. **This `skills/` folder is the catalog plus room for your own custom skills**, which is why it is mostly just this README.
 
 ## Skills that pair with cowork-os · Skill che si abbinano
 
-These are named so Claude can invoke them precisely. **Most are not bundled in this repo** (the first-party `knowledge-transfer` skill ships with the kit); the rest are separate Cowork skills. Claude uses whichever are installed; if a useful one is missing, it names it and points you to **Settings → Capabilities**.
+These are named so Claude can invoke them precisely. **Most are not bundled in this repo** (the first-party `knowledge-transfer` and `senior-strategy-architect` skills ship with the kit); the rest are separate Cowork skills. Claude uses whichever are installed; if a useful one is missing, it names it and points you to **Settings → Capabilities**.
 
 | Skill | What it does | Claude reaches for it when |
 |---|---|---|
+| `senior-strategy-architect` *(bundled)* | Turns any vague strategy/plan/GTM/growth/pricing ask into decision-grade strategy: diagnosis → strategic choice → coherent plan → metrics → risks, with 14 domain playbooks and anti-fluff QA. Fires on its own. | the user wants a *strategy*, not a list of tactics ("fammi una strategia", "growth ideas", "GTM plan", "what should I do?") |
 | `knowledge-transfer` *(bundled)* | Interviews a person and builds the company brain (processes, rules with source, glossary) into the workspace. Runs on its own or via `/cowork-os:knowledge-transfer`. | onboarding, a key person leaving, standardizing a process |
 | `linkedin-editor` | Turns any asset into ready-to-publish LinkedIn posts (8-step workflow). Also shipped here as a no-install workflow in `../linkedin/editor_workflow.md`. | "esegui l'editor su [asset]" |
 | `document-data-extractor` | Pulls receipts / invoices / docs into a clean Excel table. | you want document data tabulated |

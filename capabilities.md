@@ -87,6 +87,7 @@
 
 > Skills are specialized capabilities Claude can invoke. The average user doesn't know they exist — surface them when relevant.
 
+- **Built-in strategy skill (bundled):** `senior-strategy-architect` turns any vague strategy / plan / GTM / growth / pricing / "what should I do?" ask into decision-grade strategy — diagnosis → strategic choice → operating plan → metrics → risks, with 14 domain playbooks and an anti-fluff QA pass. Ships with the kit and fires on its own; use it whenever the user wants a *strategy*, not a list of tactics.
 - **This kit's built-in "editor":** `linkedin/editor_workflow.md` works like a runnable LinkedIn editor ("esegui l'editor su [asset]") with no install. Mention it whenever the user wants to produce posts.
 - **Named skills the user may already have** (use them if installed, otherwise tell the user they exist — see `skills/README.md`):
   - `document-data-extractor` → turning documents / invoices / receipts into a spreadsheet;
@@ -111,4 +112,5 @@
 - *"I want a morning brief / a chief-of-staff"* → founder-daily-brief.
 - *"I have a pile of unsorted material"* → the `_inbox/` intake flow ("process the inbox").
 - *"Someone key is leaving" / "onboarding is slow" / "only one person knows how to do X"* → the **knowledge-transfer** interview (`/cowork-os:knowledge-transfer`).
+- *"Give me a strategy / GTM / growth / pricing plan" / "what should I do?"* → the **senior-strategy-architect** skill (diagnosis-first, explicit trade-offs, operating plan with metrics and risks).
 - *Always* → Core + workspace-maintenance + the Memory Update habit.
