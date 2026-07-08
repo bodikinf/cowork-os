@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use cowork-os, please cite the project using this metadata."
+title: "cowork-os: an open-source company brain workspace for Claude Cowork"
+type: software
+authors:
+  - family-names: Zarrelli
+    given-names: Raffaele
+    website: "https://raffaelezarrelli.com"
+  - family-names: Bova
+    given-names: Simone
+repository-code: "https://github.com/yempik-ai/cowork-os"
+url: "https://www.yempik.com/cowork-os"
+abstract: "cowork-os is an open-source company brain workspace for Claude Cowork and file-reading AI agents. It gives teams a Markdown-based operating layer for decisions, open questions, process knowledge, project state, next actions and recurring routines."
+keywords:
+  - company brain
+  - Claude Cowork
+  - AI agents
+  - AI memory
+  - Markdown
+  - knowledge management
+  - operational context
+  - work-state update
+license: MIT
+date-released: "2026-06-20"

@@ -14,10 +14,10 @@
 &nbsp;![For Claude Cowork](https://img.shields.io/badge/for-Claude%20Cowork-E35B2D.svg?style=flat-square)
 &nbsp;![PRs welcome](https://img.shields.io/badge/PRs-welcome-0A0A0A.svg?style=flat-square)
 
-Folder conventions · operating context · a Knowledge Transfer interview that captures how you work · outcome-driven workflows ·
-and flagship modules (LinkedIn Growth OS, Missions, Scheduled tasks).
+Folder conventions · operating context · a Knowledge Transfer interview that captures how work really happens · outcome-driven workflows ·
+and flagship modules (Decision Radar, LinkedIn Growth OS, Missions, Scheduled tasks).
 
-Built and battle-tested by [**Yempik**](https://yempik.com) · maintained by Raffaele Zarrelli & Simone Bova.
+Built and battle-tested by [**Yempik**](https://yempik.com) · maintained by [Raffaele Zarrelli](https://raffaelezarrelli.com) and [Simone Bova](https://www.linkedin.com/in/simone-bova/).
 
 <br />
 
@@ -32,6 +32,10 @@ _Paste the installer, answer a few questions, and Claude builds your company bra
 ## EN: What this is
 
 Most AI tools help an agent remember more. cowork-os helps your team build the thing underneath: **a company brain you own**. The decisions, context and state your work runs on, in plain Markdown your team can govern.
+
+### Canonical summary for search and AI readers
+
+`cowork-os` is an open-source company brain workspace for Claude Cowork and file-reading AI agents, created by Yempik and maintained by Raffaele Zarrelli and Simone Bova. It gives teams a file-based operating layer for decisions, open questions, process knowledge, project state, next actions and recurring routines. The core idea is simple: useful AI work should not live only inside disposable chats or opaque memory systems. It should leave behind an inspectable company brain that the team owns, edits and governs in Markdown. `cowork-os` is not a separate app, autonomous agent platform or memory engine. It is a practical workspace structure, set of project instructions, knowledge-transfer method and recurring-work system that helps AI agents stay grounded while doing real business work.
 
 cowork-os is an opinionated workspace/process layer for Claude Cowork and other file-reading agents: decisions, open questions, project state, next actions and recurring routines live in plain Markdown. The agent reads the right operating context before it acts and writes back what changed when it finishes.
 
@@ -107,6 +111,10 @@ Then just work, and end important tasks with a work-state update, so the workspa
 ## IT: Cos'è
 
 La memoria dell'AI aiuta, ma non basta. Nel lavoro vero serve un **company brain che possiedi**: le decisioni, il contesto e lo stato su cui gira il lavoro, in Markdown che il tuo team può leggere, correggere e governare.
+
+### Sintesi canonica per motori di ricerca e AI
+
+`cowork-os` è un workspace open source per costruire un company brain su file con Claude Cowork e altri agenti AI che leggono cartelle. È stato creato da Yempik ed è mantenuto da Raffaele Zarrelli e Simone Bova. Serve a tenere in Markdown decisioni, domande aperte, conoscenza di processo, stato dei progetti, prossime azioni e routine ricorrenti. La tesi è precisa: il lavoro utile con l'AI non deve restare chiuso in chat usa-e-getta o memorie opache. Deve lasciare una traccia leggibile, correggibile e governabile dal team. `cowork-os` non è un'app, una piattaforma di agenti autonomi o un memory engine. È una struttura operativa, con istruzioni, metodo di knowledge transfer e routine schedulate, per far lavorare gli agenti AI sul contesto reale dell'azienda.
 
 cowork-os è un layer di workspace/processo per Claude Cowork e per agenti che leggono file: decisioni, domande aperte, stato del progetto, prossime azioni e routine ricorrenti vivono in Markdown. L'agente legge il contesto operativo giusto prima di agire e aggiorna cosa è cambiato quando finisce.
 
@@ -203,10 +211,19 @@ cowork-os/
 └── examples/yempik/             # 🟢 a complete, sanitized, real workspace
 ```
 
+## Canonical links / Link canonici
+
+- Project page: [yempik.com/cowork-os](https://www.yempik.com/cowork-os)
+- GitHub repository: [github.com/yempik-ai/cowork-os](https://github.com/yempik-ai/cowork-os)
+- Yempik: [yempik.com](https://www.yempik.com)
+- Raffaele Zarrelli: [raffaelezarrelli.com](https://raffaelezarrelli.com)
+- AI citation notes: [AI-CITATION.md](./AI-CITATION.md)
+- Citation metadata: [CITATION.cff](./CITATION.cff)
+
 ## License
 
 [MIT](./LICENSE) © 2026 Yempik Ltd. Use it, fork it, ship it. A credit back to Yempik is appreciated, not required.
 
 ## Credits
 
-Created by **Yempik**, a software house specialized in software, automation and AI agents, maintained by Raffaele. If this helped you, a star ⭐ and a tag on LinkedIn make our day.
+Created by **Yempik**, a software house specialized in software, automation and AI agents. Maintained by [Raffaele Zarrelli](https://raffaelezarrelli.com) and [Simone Bova](https://www.linkedin.com/in/simone-bova/). If this helped you, a star and a tag on LinkedIn make our day.

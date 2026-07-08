@@ -1,8 +1,8 @@
 # cowork-os (plugin)
 
-The installable plugin version of [**cowork-os**](https://github.com/yempik-ai/cowork-os), an operating workspace for Claude Cowork. Install it once and Claude gets the cowork-os operating rules plus a set of slash commands, with no setup.
+The installable plugin version of [**cowork-os**](https://github.com/yempik-ai/cowork-os), an operating workspace for Claude Cowork that helps teams build a company brain they own. Install it once and Claude gets the cowork-os operating rules plus a set of slash commands, with no setup.
 
-Built by [Yempik](https://yempik.com) for Claude Cowork. MIT.
+Built by [Yempik](https://yempik.com) for Claude Cowork. Maintained by [Raffaele Zarrelli](https://raffaelezarrelli.com) and [Simone Bova](https://www.linkedin.com/in/simone-bova/). MIT.
 
 ## Install
 
@@ -18,13 +18,14 @@ Built by [Yempik](https://yempik.com) for Claude Cowork. MIT.
 
 ## What you get
 
-A always-on **core skill** (`cowork-os-core`) that makes Claude check sources first, separate facts from assumptions and recommendations, never invent data, keep a business tone, and maintain the workspace's living memory.
+An always-on **core skill** (`cowork-os-core`) that makes Claude check sources first, separate facts from assumptions and recommendations, never invent data, keep a business tone, and maintain the workspace's living memory.
 
-Plus six slash commands:
+Plus seven slash commands:
 
 | Command | What it does |
 |---|---|
 | `/cowork-os:install` | Guided setup. Interviews you (about 5 min) and generates a full, pre-configured workspace: folders, copy, project instructions, and recurring routines. |
+| `/cowork-os:knowledge-transfer` | Interviews a person and turns tacit operating knowledge into process files, rules, glossary terms, decisions and open questions. |
 | `/cowork-os:memory-update` | Runs the Memory Update protocol so decisions, questions, assumptions and risks are written to the right files. |
 | `/cowork-os:linkedin-editor` | The 8-step LinkedIn editor: turns any source into ready-to-publish, founder-voice posts optimized for reach and leads. |
 | `/cowork-os:mission` | Mission mode: pursue an ambitious outcome (a dream client, a partnership) with route maps, an evidence log, and stop conditions. |
