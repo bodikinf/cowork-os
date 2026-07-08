@@ -66,6 +66,7 @@ The "multiple agents" are separate runs and sub-agents that coordinate through t
 | 🚩 **Knowledge Transfer** | An objective-first interview that captures the tacit know-how in a person's head (the exceptions, the decision criteria, the unwritten rules) and writes it into the workspace as processes, rules with a source and a glossary. It builds the company brain from your people, not just your files. |
 | 🚩 **Decision Lifecycle + Radar** | Decisions become status-carrying records (owner, review date, reversal condition), fed by a daily **signal sweep** that reads email/Slack and captures the decisions/commitments made there. A weekly **Decision Radar** surfaces what's active, stale, conflicting, blocking, and the 3 to decide this week. Stops the team from re-deciding and contradicting itself. |
 | 🚩 **LinkedIn Growth OS** | A full system to turn know-how into authority and leads: strategy, a content engine (6 formats + hook/CTA banks), a reputation engine, an engagement playbook, and a runnable 8-step editor. |
+| 🚩 **Pipeline (sales layer)** | A CRM/sales layer for anyone running a deal pipeline: your real sales rules, follow-up templates in your voice, and a deal radar (overdue follow-ups, stalled deals) that feeds the daily brief. Ships the on-demand `pipeline-followup` skill that drafts follow-ups from the deal's email thread, draft-only, never sends. |
 | 🚩 **Missions** | The outcome framework, packaged as a copy-paste mission template. |
 | 🚩 **Scheduled tasks** | 14 ready-to-use recurring automations (weekly marketing pulse, campaign review, workspace maintenance, trend hunter, engagement radar, mission review, daily founder brief, daily signal sweep AM/PM, decision radar, pipeline deal radar…) as prompt templates + a setup guide. |
 
@@ -134,9 +135,11 @@ I "più agenti" sono run e sotto-agenti che si coordinano attraverso i file cond
 | **Project Instructions** | Il system prompt che trasforma un assistente generico in uno strategist che controlla sempre le fonti, separa fatti e ipotesi, e aggiorna lo stato di lavoro. |
 | **Relentless Outcome Workflow** | Un metodo per le *missioni ambiziose*: persegui un outcome, non un task. Route map, evidence log, stop condition. |
 | 🚩 **Knowledge Transfer** | Un'intervista objective-first che cattura il know-how tacito nella testa di una persona (eccezioni, criteri di decisione, regole non scritte) e lo scrive nel workspace come processi, regole con fonte e glossario. Costruisce il company brain dalle persone, non solo dai file. |
+| 🚩 **Decision Lifecycle + Radar** | Le decisioni diventano record con stato (owner, data di review, condizione di reversibilità), alimentati da un **signal sweep** giornaliero che legge email/Slack e cattura le decisioni/impegni presi lì. Un **Decision Radar** settimanale mostra cosa è attivo, vecchio, in conflitto, bloccante e le 3 da decidere questa settimana. Evita che il team ridecida e si contraddica. |
 | 🚩 **LinkedIn Growth OS** | Un sistema completo per trasformare know-how in autorevolezza e lead: strategia, content engine (6 format + hook/CTA bank), reputation engine, engagement playbook, editor a 8 step. |
+| 🚩 **Pipeline (layer commerciale)** | Un layer CRM/vendite per chi gestisce una pipeline di deal: le tue regole di vendita reali, template di follow-up nella tua voce e un deal radar (follow-up scaduti, deal fermi) che alimenta il brief giornaliero. Include la skill on-demand `pipeline-followup` che prepara i follow-up dal thread email del deal, solo bozze, non invia mai. |
 | 🚩 **Missions** | Il framework outcome, pacchettizzato come template di missione copia-incolla. |
-| 🚩 **Scheduled tasks** | 10 automazioni ricorrenti pronte all'uso (pulse marketing, review campagne, manutenzione workspace, trend hunter, engagement radar, review missioni, brief founder giornaliero…) come template di prompt + guida. |
+| 🚩 **Scheduled tasks** | 14 automazioni ricorrenti pronte all'uso (pulse marketing, review campagne, manutenzione workspace, trend hunter, engagement radar, review missioni, brief founder giornaliero, signal sweep AM/PM, decision radar, pipeline deal radar…) come template di prompt + guida. |
 
 ### Perché funziona
 
@@ -192,6 +195,7 @@ cowork-os/
 ├── reviews/                     # weekly + maintenance review templates
 ├── missions/                    # 🚩 outcome-driven mission template
 ├── products/                    # product-workstream pattern
+├── pipeline/                    # 🚩 sales/CRM layer: rules · follow-up templates · deal radar
 ├── linkedin/                    # 🚩 LinkedIn Growth OS
 ├── scheduled-tasks/             # 🚩 recurring automations ("routines") + setup guide
 ├── skills/                      # skills that pair with the kit + your own
