@@ -12,6 +12,7 @@ These are named so Claude can invoke them precisely. **Most are not bundled in t
 | Skill | What it does | Claude reaches for it when |
 |---|---|---|
 | `senior-strategy-architect` *(bundled)* | Turns any vague strategy/plan/GTM/growth/pricing ask into decision-grade strategy: diagnosis → strategic choice → coherent plan → metrics → risks, with 14 domain playbooks and anti-fluff QA. Fires on its own. | the user wants a *strategy*, not a list of tactics ("fammi una strategia", "growth ideas", "GTM plan", "what should I do?") |
+| `gtm-engineering-outbound` *(Yempik standalone)* | Builds and audits GTM engineering outbound systems: ICP, signals, Clay-style list building, AI prospecting, cold email/LinkedIn, deliverability, reply handling, and weekly review. Published in [`yempik-skills`](https://github.com/yempik-ai/yempik-skills/tree/main/gtm-engineering-outbound). | the user wants founder-led outbound, cold email, Clay/Smartlead workflows, ICP signal maps, list enrichment, deliverability, or a repeatable commercial system |
 | `knowledge-transfer` *(bundled)* | Interviews a person and builds the company brain (processes, rules with source, glossary) into the workspace. Runs on its own or via `/cowork-os:knowledge-transfer`. | onboarding, a key person leaving, standardizing a process |
 | `pipeline-followup` *(bundled)* | Prepares **draft** follow-up emails for CRM deals gone quiet: reads the deal's Gmail thread + `pipeline/rules.md`, writes a Gmail draft in your voice, never sends. On-demand. | "controlla la pipeline e preparami i follow-up", "chi non mi ha risposto?", chasing stalled deals |
 | `linkedin-editor` | Turns any asset into ready-to-publish LinkedIn posts (8-step workflow). Also shipped here as a no-install workflow in `../linkedin/editor_workflow.md`. | "esegui l'editor su [asset]" |
@@ -25,7 +26,7 @@ These are named so Claude can invoke them precisely. **Most are not bundled in t
 
 > **Why not bundled:** third-party skills aren't ours to redistribute, and they evolve on their own. Cataloging + invoking them keeps the kit lightweight and always current.
 >
-> **Yempik's own skills** (e.g. `linkedin-editor`, `verification`) are published as standalone skills in the companion repo **`yempik-skills`** — cross-link them there rather than copying them here.
+> **Yempik's own skills** (e.g. `gtm-engineering-outbound`, `linkedin-editor`, `verification`) are published as standalone skills in the companion repo **[`yempik-skills`](https://github.com/yempik-ai/yempik-skills)** — cross-link them there rather than copying them here.
 
 ## Bring your own · Porta le tue
 
