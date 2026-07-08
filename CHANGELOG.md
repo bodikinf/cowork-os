@@ -2,6 +2,31 @@
 
 All notable changes to cowork-os are documented here. Format loosely based on Keep a Changelog; versioning follows SemVer (pre-1.0, so minor versions add features).
 
+## [0.4.0] - 2026-07-08 — Decisions stop slipping through the cracks
+
+cowork-os gains the two layers a growing team feels missing first: a **decision lifecycle** fed by your real communication, and a **sales pipeline** layer. Decisions get captured where they actually happen (email, Slack) instead of living in someone's head, and deals stop going cold because you forgot to follow up.
+
+### Added
+- **Decision Lifecycle + Decision Radar.** Decisions become status-carrying records (`proposed → active → superseded/expired/rejected`, with owner + review date). A weekly **Decision Radar** (`decision-radar` task, Mon 08:30) surfaces what's active, stale, conflicting, blocking, and the 3 decisions to make this week. New files: `decisions/decision_candidates.md`, `decisions/active_decisions.md`, `decisions/decision_radar.md`.
+- **Signals — an ingestion layer.** Daily **signal sweeps** (`daily-signal-sweep-am` 07:30 / `daily-signal-sweep-pm` 18:00) read email + Slack (optional Notion + Google Drive) since a watermark and distill them into structured signals — decisions, commitments, questions, risks, deadlines — promoting real decisions/commitments to candidates. Read-only: captures and flags, never sends. Raw dumps are private and gitignored; only `signals/sync-state.md` (watermarks, no content) is tracked.
+- **Pipeline — a sales/CRM layer.** New `pipeline/` module (`rules.md`, `followup_templates.md`, `deal_radar.md`), the `pipeline-deal-radar` task (weekdays 07:15) that reads the CRM + your sales rules for overdue follow-ups and stalled deals and feeds the daily brief, and a bundled **`pipeline-followup`** skill that drafts follow-up emails in your voice from the deal's Gmail thread (draft-only, never sends).
+- **Mission template scaffolding:** `missions/_TEMPLATE/` now ships `target_accounts.md`, `people_map.md`, `outreach_assets.md`, `linkedin_queue.md`.
+- **Worked example.** `examples/yempik/` gains decision + signal sample data.
+
+### Changed
+- **Scheduled tasks: 10 → 14** (added signal sweep AM/PM, decision radar, pipeline deal radar).
+- **`founder-daily-brief`** now folds in the pipeline and doc-change lines, so it stays the single morning surface.
+- Docs updated: README, `capabilities.md`, `PROJECT_INSTRUCTIONS.md`, `PROJECT_STRUCTURE.md`, `scheduled-tasks/README.md`. `.gitignore` now excludes private signal dumps and runtime `*_run.lock` files.
+- Plugin manifest bumped to `0.4.0`; the marketplace entry was realigned from a stale `0.1.1` to `0.4.0`.
+
+## [0.3.0] - 2026-07-07 — Decision-grade strategy on demand
+
+### Added
+- **`senior-strategy-architect` skill (bundled).** Turns any vague strategy / plan / GTM / growth / pricing / "what should I do?" ask into decision-grade strategy: diagnosis → strategic choice → coherent plan → metrics → risks. Ships 14 domain playbooks, an intake question bank, a framework library, a research protocol, and an anti-fluff QA rubric. Fires on its own.
+
+### Changed
+- `capabilities.md` and `skills/README.md` surface the new bundled skill and when it should trigger.
+
 ## [0.2.0] - 2026-07-01 — Build a company brain your team owns
 
 cowork-os grows from "a Cowork workspace with memory" into what it was always for: a **company brain your team owns**, the decisions, context and processes your work runs on, in plain Markdown you can read, correct and govern. Not a memory engine, not a vendor you rent.
